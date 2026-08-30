@@ -32,9 +32,15 @@ Hover or click opens a panel; leaving the row restarts a 4.5s auto-advance. Stac
 height-animated rows under 900px. No auto-advance under prefers-reduced-motion.
 
 ## Testimonials
-Three columns of cards scrolling vertically at 46s / 58s / 52s, middle one reversed, edges masked.
-Cards are rendered in JS from `VOICES` in script.js so they follow the language switch.
-Columns drop to two, then one, on narrow screens.
+Desktop: three columns of cards scrolling vertically at 46s / 58s / 52s, middle one reversed, edges
+masked. Under 900px the columns are replaced by a staggered deck (adapted from the 21st.dev
+stagger-testimonials component): the front card is black with an orange keyline, neighbours sit
+behind it tilted and faded, and arrows or a tap on a side card steps through. Both are rendered in
+JS from `VOICES` in script.js so they follow the language switch. Each card carries a four or five
+star rating in orange, and portraits keep their color.
+
+## Copy rule
+No full stop at the end of any heading, in any language.
 
 ## Images
 `img/hero.jpg`, `img/technician.jpg`, `img/doors-wide.jpg`, `img/services/*.jpg`, `img/people/*.jpg`:

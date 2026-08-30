@@ -5,7 +5,7 @@ const I18N = {
     "nav.services": "Services", "nav.why": "Why us", "nav.contact": "Contact",
     "nav.services2": "Services", "nav.why2": "Why us", "nav.contact2": "Contact",
     "header.cta": "Call 24/7",
-    "hero.title": "Your elevator, in expert hands.",
+    "hero.title": "Your elevator, in expert hands",
     "hero.lede": "Maintenance, repair and modernization for every brand in Spain. One contract, one call, around the clock.",
     "hero.cta": "Request a free audit",
     "services.title": "Everything your elevator needs",
@@ -15,7 +15,7 @@ const I18N = {
     "svc4.name": "Accessibility", "svc4.desc": "Stairlifts and adaptations for reduced mobility.",
     "svc5.name": "New installations", "svc5.desc": "From plan to commissioning in new buildings.",
     "svc6.name": "Buildings without elevators", "svc6.desc": "We fit elevators into buildings never designed for one.",
-    "voices.title": "What buildings say",
+    "voices.title": "From the buildings we look after",
     "v1.q": "They took over a lift two other firms had given up on. It has not stopped since.",
     "v1.r": "Property manager, Madrid",
     "v2.q": "A neighbour was trapped on a Sunday night. A technician was there in under an hour.",
@@ -34,13 +34,13 @@ const I18N = {
     "v8.r": "Administrator, Zaragoza",
     "v9.q": "Old machine, obsolete brand, no spare parts anywhere. They found a way around it.",
     "v9.r": "Warehouse owner, Murcia",
-    "why.title": "One call covers every brand.",
+    "why.title": "One call covers every brand",
     "why.p1": "Our technicians train across all major manufacturers, so one contract covers your whole building or portfolio.",
     "why.p2": "Clear contracts, itemized quotes, and a signed report after every visit. You always know what you are paying for.",
     "why.process": "Free audit. Clear quote. Scheduled work. Signed report.",
-    "emerg.title": "Someone trapped? We answer first.",
+    "emerg.title": "Someone trapped? We answer first",
     "emerg.sub": "Trapped passenger calls jump every queue, day or night.",
-    "contact.title": "Talk to a technician.",
+    "contact.title": "Talk to a technician",
     "contact.sub": "The audit is free. The quote is binding.",
     "contact.coverage": "Madrid, Barcelona, Valencia and growing. Ask about your city.",
     "form.name": "Name", "form.namePh": "Your name",
@@ -55,7 +55,7 @@ const I18N = {
     "nav.services": "Servicios", "nav.why": "Por qué LEVX", "nav.contact": "Contacto",
     "nav.services2": "Servicios", "nav.why2": "Por qué LEVX", "nav.contact2": "Contacto",
     "header.cta": "Llame 24/7",
-    "hero.title": "Su ascensor, en manos expertas.",
+    "hero.title": "Su ascensor, en manos expertas",
     "hero.lede": "Mantenimiento, reparación y modernización de todas las marcas en España. Un contrato, una llamada, a cualquier hora.",
     "hero.cta": "Solicitar auditoría gratuita",
     "services.title": "Todo lo que necesita su ascensor",
@@ -65,7 +65,7 @@ const I18N = {
     "svc4.name": "Accesibilidad", "svc4.desc": "Salvaescaleras y adaptaciones para movilidad reducida.",
     "svc5.name": "Obra nueva", "svc5.desc": "Del proyecto a la puesta en marcha en edificios nuevos.",
     "svc6.name": "Fincas sin ascensor", "svc6.desc": "Instalamos ascensores en edificios que no fueron diseñados para tenerlo.",
-    "voices.title": "Lo que dicen las fincas",
+    "voices.title": "Las fincas que cuidamos",
     "v1.q": "Se hicieron cargo de un ascensor que otras dos empresas habían dado por perdido. No ha vuelto a pararse.",
     "v1.r": "Administradora de fincas, Madrid",
     "v2.q": "Un vecino se quedó atrapado un domingo por la noche. El técnico llegó en menos de una hora.",
@@ -84,13 +84,13 @@ const I18N = {
     "v8.r": "Administradora, Zaragoza",
     "v9.q": "Máquina antigua, marca descatalogada, sin repuestos en ninguna parte. Encontraron la manera.",
     "v9.r": "Propietario de nave, Murcia",
-    "why.title": "Una llamada cubre todas las marcas.",
+    "why.title": "Una llamada cubre todas las marcas",
     "why.p1": "Nuestros técnicos se forman en todos los grandes fabricantes, así que un solo contrato cubre todo su edificio o cartera.",
     "why.p2": "Contratos claros, presupuestos detallados y un parte firmado tras cada visita. Siempre sabrá qué está pagando.",
     "why.process": "Auditoría gratuita. Presupuesto claro. Trabajo planificado. Parte firmado.",
-    "emerg.title": "¿Alguien atrapado? Respondemos primero.",
+    "emerg.title": "¿Alguien atrapado? Respondemos primero",
     "emerg.sub": "Los atrapamientos saltan cualquier cola, de día o de noche.",
-    "contact.title": "Hable con un técnico.",
+    "contact.title": "Hable con un técnico",
     "contact.sub": "La auditoría es gratuita. El presupuesto, vinculante.",
     "contact.coverage": "Madrid, Barcelona, Valencia y creciendo. Pregunte por su ciudad.",
     "form.name": "Nombre", "form.namePh": "Su nombre",
@@ -105,7 +105,7 @@ const I18N = {
     "nav.services": "خدماتنا", "nav.why": "لماذا نحن", "nav.contact": "اتصل بنا",
     "nav.services2": "خدماتنا", "nav.why2": "لماذا نحن", "nav.contact2": "اتصل بنا",
     "header.cta": "اتصل ٢٤/٧",
-    "hero.title": "مصعدك في أيدٍ خبيرة.",
+    "hero.title": "مصعدك في أيدٍ خبيرة",
     "hero.lede": "صيانة وإصلاح وتحديث لجميع الماركات في إسبانيا. عقد واحد، اتصال واحد، على مدار الساعة.",
     "hero.cta": "اطلب فحصاً مجانياً",
     "services.title": "كل ما يحتاجه مصعدك",
@@ -115,7 +115,7 @@ const I18N = {
     "svc4.name": "تسهيل الوصول", "svc4.desc": "مصاعد سلالم وتعديلات لذوي الحركة المحدودة.",
     "svc5.name": "تركيبات جديدة", "svc5.desc": "من المخطط إلى التشغيل في المباني الجديدة.",
     "svc6.name": "مبانٍ بدون مصعد", "svc6.desc": "نركّب المصاعد في مبانٍ لم تُصمَّم أصلاً لمصعد.",
-    "voices.title": "ماذا تقول المباني",
+    "voices.title": "المباني التي نعتني بها",
     "v1.q": "تولّوا مصعداً استسلمت له شركتان قبلهم. لم يتوقف منذ ذلك الحين.",
     "v1.r": "مديرة عقارات، مدريد",
     "v2.q": "علق أحد الجيران مساء الأحد. وصل الفني في أقل من ساعة.",
@@ -134,13 +134,13 @@ const I18N = {
     "v8.r": "مديرة عقارات، سرقسطة",
     "v9.q": "ماكينة قديمة وماركة متوقفة ولا قطع غيار في أي مكان. وجدوا حلاً رغم ذلك.",
     "v9.r": "صاحب مستودع، مرسية",
-    "why.title": "اتصال واحد يغطي جميع الماركات.",
+    "why.title": "اتصال واحد يغطي جميع الماركات",
     "why.p1": "فنيونا يتدربون لدى كبرى الشركات المصنعة، فعقد واحد يغطي مبناك أو كل ما تديره.",
     "why.p2": "عقود واضحة وعروض أسعار مفصلة وتقرير موقّع بعد كل زيارة. تعرف دائماً ما تدفع مقابله.",
     "why.process": "فحص مجاني. عرض واضح. عمل مجدول. تقرير موقّع.",
-    "emerg.title": "شخص محتجز؟ نحن أول من يرد.",
+    "emerg.title": "شخص محتجز؟ نحن أول من يرد",
     "emerg.sub": "حالات الاحتجاز تتخطى كل الطوابير، ليلاً ونهاراً.",
-    "contact.title": "تحدث مع فني.",
+    "contact.title": "تحدث مع فني",
     "contact.sub": "الفحص مجاني وعرض السعر ملزم.",
     "contact.coverage": "مدريد وبرشلونة وفالنسيا والقائمة تكبر. اسأل عن مدينتك.",
     "form.name": "الاسم", "form.namePh": "اسمك",
@@ -213,41 +213,103 @@ panelBox.addEventListener("mouseleave", panelDrift);
 panelBox.addEventListener("focusout", e => {
   if (!panelBox.contains(e.relatedTarget)) panelDrift();
 });
-panelDrift();
+
+/* Start on the first panel, open, the moment the row comes into view */
+new IntersectionObserver((entries, obs) => {
+  if (!entries[0].isIntersecting) return;
+  openPanel(0);
+  panelDrift();
+  obs.disconnect();
+}, { threshold: 0.25 }).observe(panelBox);
 
 /* Testimonials: three columns drifting at their own pace */
 const VOICES = [
-  { id: "v1", name: "Marta Ruiz", img: "img/people/p1.jpg" },
-  { id: "v2", name: "Javier Soler", img: "img/people/p2.jpg" },
-  { id: "v3", name: "Antonio Vidal", img: "img/people/p3.jpg" },
-  { id: "v4", name: "Lucía Ferrer", img: "img/people/p4.jpg" },
-  { id: "v5", name: "Pablo Iglesias Mena", img: "img/people/p5.jpg" },
-  { id: "v6", name: "Elena Cortés", img: "img/people/p6.jpg" },
-  { id: "v7", name: "Sergio Nadal", img: "img/people/p7.jpg" },
-  { id: "v8", name: "Carmen Ortega", img: "img/people/p8.jpg" },
-  { id: "v9", name: "Rubén Castaño", img: "img/people/p9.jpg" }
+  { id: "v1", name: "Marta Ruiz", img: "img/people/p1.jpg", stars: 5 },
+  { id: "v2", name: "Javier Soler", img: "img/people/p2.jpg", stars: 5 },
+  { id: "v3", name: "Antonio Vidal", img: "img/people/p3.jpg", stars: 4 },
+  { id: "v4", name: "Lucía Ferrer", img: "img/people/p4.jpg", stars: 5 },
+  { id: "v5", name: "Pablo Iglesias Mena", img: "img/people/p5.jpg", stars: 4 },
+  { id: "v6", name: "Elena Cortés", img: "img/people/p6.jpg", stars: 5 },
+  { id: "v7", name: "Sergio Nadal", img: "img/people/p7.jpg", stars: 5 },
+  { id: "v8", name: "Carmen Ortega", img: "img/people/p8.jpg", stars: 5 },
+  { id: "v9", name: "Rubén Castaño", img: "img/people/p9.jpg", stars: 4 }
 ];
 
+const STAR = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3L7 14.2l-5-4.9 6.9-1z"/></svg>';
+
+function stars(n) {
+  return `<span class="stars" role="img" aria-label="${n} out of 5">${STAR.repeat(n)}</span>`;
+}
+
 const voiceCols = [...document.querySelectorAll(".voice-col")];
+const deckStage = document.getElementById("deckStage");
+
+function voiceCard(v, dict, cls) {
+  return `
+    <figure class="voice${cls ? " " + cls : ""}">
+      ${stars(v.stars)}
+      <p>${dict[v.id + ".q"]}</p>
+      <figcaption class="voice-who">
+        <img src="${v.img}" alt="" width="44" height="44" loading="lazy">
+        <span>
+          <span class="voice-name">${v.name}</span><br>
+          <span class="voice-role">${dict[v.id + ".r"]}</span>
+        </span>
+      </figcaption>
+    </figure>`;
+}
 
 function renderVoices(dict) {
   voiceCols.forEach((col, c) => {
-    const mine = VOICES.filter((_, i) => i % voiceCols.length === c);
-    const cards = mine.map(v => `
-      <figure class="voice">
-        <p>${dict[v.id + ".q"]}</p>
-        <figcaption class="voice-who">
-          <img src="${v.img}" alt="" width="38" height="38" loading="lazy">
-          <span>
-            <span class="voice-name">${v.name}</span><br>
-            <span class="voice-role">${dict[v.id + ".r"]}</span>
-          </span>
-        </figcaption>
-      </figure>`).join("");
+    const cards = VOICES
+      .filter((_, i) => i % voiceCols.length === c)
+      .map(v => voiceCard(v, dict))
+      .join("");
     col.innerHTML = still ? cards : cards + cards;
     col.style.animationDuration = col.dataset.speed + "s";
   });
+  deckStage.innerHTML = VOICES.map(v => voiceCard(v, dict, "deck-card")).join("");
+  placeDeck();
 }
+
+/* Phone: the same reviews as a staggered deck you can step through */
+const half = Math.floor(VOICES.length / 2);
+let deckAt = 0;
+
+function placeDeck() {
+  const cards = [...deckStage.children];
+  const rtl = document.documentElement.dir === "rtl" ? -1 : 1;
+  cards.forEach((el, i) => {
+    let p = i - deckAt;
+    p = ((p + half) % VOICES.length + VOICES.length) % VOICES.length - half;
+    const near = Math.abs(p) <= 2;
+    const tilt = p === 0 ? 0 : (p % 2 ? 2.5 : -2.5);
+    const lift = p === 0 ? -18 : (p % 2 ? 12 : -12);
+    el.classList.toggle("is-front", p === 0);
+    el.style.zIndex = 10 - Math.abs(p);
+    el.style.opacity = near ? (p === 0 ? 1 : 0.5) : 0;
+    el.style.pointerEvents = near ? "auto" : "none";
+    el.style.transform =
+      `translate(-50%, -50%) translateX(${p * 62 * rtl}%) translateY(${lift}px) ` +
+      `rotate(${tilt}deg) scale(${p === 0 ? 1 : 0.88})`;
+  });
+}
+
+function moveDeck(steps) {
+  deckAt = (deckAt + steps + VOICES.length) % VOICES.length;
+  placeDeck();
+}
+
+document.getElementById("deckPrev").addEventListener("click", () => moveDeck(-1));
+document.getElementById("deckNext").addEventListener("click", () => moveDeck(1));
+deckStage.addEventListener("click", e => {
+  const card = e.target.closest(".deck-card");
+  if (!card) return;
+  const i = [...deckStage.children].indexOf(card);
+  let p = i - deckAt;
+  p = ((p + half) % VOICES.length + VOICES.length) % VOICES.length - half;
+  if (p) moveDeck(p);
+});
 
 /* Marquee: duplicate for a seamless loop */
 const mq = document.getElementById("marquee");
