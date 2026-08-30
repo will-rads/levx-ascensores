@@ -15,6 +15,25 @@ const I18N = {
     "svc4.name": "Accessibility", "svc4.desc": "Stairlifts and adaptations for reduced mobility.",
     "svc5.name": "New installations", "svc5.desc": "From plan to commissioning in new buildings.",
     "svc6.name": "Buildings without elevators", "svc6.desc": "We fit elevators into buildings never designed for one.",
+    "voices.title": "What buildings say",
+    "v1.q": "They took over a lift two other firms had given up on. It has not stopped since.",
+    "v1.r": "Property manager, Madrid",
+    "v2.q": "A neighbour was trapped on a Sunday night. A technician was there in under an hour.",
+    "v2.r": "Building president, Valencia",
+    "v3.q": "The quote matched the invoice to the euro. That alone made the switch worth it.",
+    "v3.r": "Administrator, 40 buildings",
+    "v4.q": "They modernized the cabin and controls without touching the shaft. Six days, no drama.",
+    "v4.r": "Hotel manager, Barcelona",
+    "v5.q": "One contract for eleven buildings and four different brands. Much easier to manage.",
+    "v5.r": "Facilities lead, Madrid",
+    "v6.q": "My mother can leave the flat on her own again. That is what it really bought us.",
+    "v6.r": "Resident, Alicante",
+    "v7.q": "They put a lift in a 1960s block that was never built for one. Nobody thought it was possible.",
+    "v7.r": "Building president, Seville",
+    "v8.q": "Every visit ends with a signed report in my inbox. I stopped chasing anyone.",
+    "v8.r": "Administrator, Zaragoza",
+    "v9.q": "Old machine, obsolete brand, no spare parts anywhere. They found a way around it.",
+    "v9.r": "Warehouse owner, Murcia",
     "why.title": "One call covers every brand.",
     "why.p1": "Our technicians train across all major manufacturers, so one contract covers your whole building or portfolio.",
     "why.p2": "Clear contracts, itemized quotes, and a signed report after every visit. You always know what you are paying for.",
@@ -46,6 +65,25 @@ const I18N = {
     "svc4.name": "Accesibilidad", "svc4.desc": "Salvaescaleras y adaptaciones para movilidad reducida.",
     "svc5.name": "Obra nueva", "svc5.desc": "Del proyecto a la puesta en marcha en edificios nuevos.",
     "svc6.name": "Fincas sin ascensor", "svc6.desc": "Instalamos ascensores en edificios que no fueron diseñados para tenerlo.",
+    "voices.title": "Lo que dicen las fincas",
+    "v1.q": "Se hicieron cargo de un ascensor que otras dos empresas habían dado por perdido. No ha vuelto a pararse.",
+    "v1.r": "Administradora de fincas, Madrid",
+    "v2.q": "Un vecino se quedó atrapado un domingo por la noche. El técnico llegó en menos de una hora.",
+    "v2.r": "Presidente de comunidad, Valencia",
+    "v3.q": "El presupuesto coincidió con la factura al euro. Solo por eso mereció la pena cambiar.",
+    "v3.r": "Administrador, 40 edificios",
+    "v4.q": "Modernizaron cabina y maniobra sin tocar el hueco. Seis días y sin sobresaltos.",
+    "v4.r": "Directora de hotel, Barcelona",
+    "v5.q": "Un solo contrato para once edificios y cuatro marcas distintas. Mucho más fácil de gestionar.",
+    "v5.r": "Responsable de mantenimiento, Madrid",
+    "v6.q": "Mi madre vuelve a salir de casa sola. Eso es lo que de verdad conseguimos.",
+    "v6.r": "Vecina, Alicante",
+    "v7.q": "Instalaron ascensor en un bloque de los sesenta que nunca lo tuvo. Nadie creía que fuera posible.",
+    "v7.r": "Presidente de comunidad, Sevilla",
+    "v8.q": "Cada visita acaba con un parte firmado en mi correo. Dejé de perseguir a nadie.",
+    "v8.r": "Administradora, Zaragoza",
+    "v9.q": "Máquina antigua, marca descatalogada, sin repuestos en ninguna parte. Encontraron la manera.",
+    "v9.r": "Propietario de nave, Murcia",
     "why.title": "Una llamada cubre todas las marcas.",
     "why.p1": "Nuestros técnicos se forman en todos los grandes fabricantes, así que un solo contrato cubre todo su edificio o cartera.",
     "why.p2": "Contratos claros, presupuestos detallados y un parte firmado tras cada visita. Siempre sabrá qué está pagando.",
@@ -77,6 +115,25 @@ const I18N = {
     "svc4.name": "تسهيل الوصول", "svc4.desc": "مصاعد سلالم وتعديلات لذوي الحركة المحدودة.",
     "svc5.name": "تركيبات جديدة", "svc5.desc": "من المخطط إلى التشغيل في المباني الجديدة.",
     "svc6.name": "مبانٍ بدون مصعد", "svc6.desc": "نركّب المصاعد في مبانٍ لم تُصمَّم أصلاً لمصعد.",
+    "voices.title": "ماذا تقول المباني",
+    "v1.q": "تولّوا مصعداً استسلمت له شركتان قبلهم. لم يتوقف منذ ذلك الحين.",
+    "v1.r": "مديرة عقارات، مدريد",
+    "v2.q": "علق أحد الجيران مساء الأحد. وصل الفني في أقل من ساعة.",
+    "v2.r": "رئيس اتحاد المبنى، فالنسيا",
+    "v3.q": "طابق عرض السعر الفاتورة يورو بيورو. هذا وحده يستحق تغيير الشركة.",
+    "v3.r": "مدير، ٤٠ مبنى",
+    "v4.q": "حدّثوا الكابينة ولوحة التحكم دون المساس بالبئر. ستة أيام بلا متاعب.",
+    "v4.r": "مديرة فندق، برشلونة",
+    "v5.q": "عقد واحد لأحد عشر مبنى وأربع ماركات مختلفة. إدارته أسهل بكثير.",
+    "v5.r": "مسؤول الصيانة، مدريد",
+    "v6.q": "عادت والدتي تخرج من البيت بمفردها. هذا ما كسبناه فعلاً.",
+    "v6.r": "ساكنة، أليكانتي",
+    "v7.q": "ركّبوا مصعداً في مبنى من الستينيات لم يُصمم لمصعد أصلاً. لم يظن أحد أن ذلك ممكن.",
+    "v7.r": "رئيس اتحاد المبنى، إشبيلية",
+    "v8.q": "كل زيارة تنتهي بتقرير موقّع في بريدي. توقفت عن ملاحقة أحد.",
+    "v8.r": "مديرة عقارات، سرقسطة",
+    "v9.q": "ماكينة قديمة وماركة متوقفة ولا قطع غيار في أي مكان. وجدوا حلاً رغم ذلك.",
+    "v9.r": "صاحب مستودع، مرسية",
     "why.title": "اتصال واحد يغطي جميع الماركات.",
     "why.p1": "فنيونا يتدربون لدى كبرى الشركات المصنعة، فعقد واحد يغطي مبناك أو كل ما تديره.",
     "why.p2": "عقود واضحة وعروض أسعار مفصلة وتقرير موقّع بعد كل زيارة. تعرف دائماً ما تدفع مقابله.",
@@ -109,15 +166,12 @@ function setLang(lang) {
   });
   document.querySelectorAll(".lang-switch button").forEach(b =>
     b.classList.toggle("active", b.dataset.lang === lang));
+  renderVoices(dict);
   try { localStorage.setItem("levx-lang", lang); } catch (e) {}
 }
 
 document.querySelectorAll(".lang-switch button").forEach(b =>
   b.addEventListener("click", () => setLang(b.dataset.lang)));
-
-let saved = "en";
-try { saved = localStorage.getItem("levx-lang") || "en"; } catch (e) {}
-if (saved !== "en") setLang(saved);
 
 /* Header hairline after scroll (IntersectionObserver on a top sentinel, no scroll listener) */
 const header = document.getElementById("siteHeader");
@@ -128,18 +182,72 @@ new IntersectionObserver(([e]) =>
   header.classList.toggle("scrolled", !e.isIntersecting)
 ).observe(sentinel);
 
-/* Accordion: one open at a time */
-const items = [...document.querySelectorAll(".acc-item")];
-items.forEach(item => {
-  const btn = item.querySelector("button");
-  btn.addEventListener("click", () => {
-    items.forEach(o => {
-      const open = o === item && !o.classList.contains("open");
-      o.classList.toggle("open", open);
-      o.querySelector("button").setAttribute("aria-expanded", open ? "true" : "false");
-    });
+/* Service panels: expand on hover or click, drift on their own when left alone */
+const panels = [...document.querySelectorAll(".panel")];
+const panelBox = document.getElementById("panels");
+const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let panelTimer = null;
+
+function openPanel(i) {
+  panels.forEach((p, n) => {
+    p.classList.toggle("is-open", n === i);
+    p.setAttribute("aria-expanded", n === i ? "true" : "false");
   });
+}
+
+function panelDrift() {
+  clearInterval(panelTimer);
+  if (still) return;
+  panelTimer = setInterval(() => {
+    const at = panels.findIndex(p => p.classList.contains("is-open"));
+    openPanel((at + 1) % panels.length);
+  }, 4500);
+}
+
+panels.forEach((p, i) => {
+  p.addEventListener("click", () => { openPanel(i); panelDrift(); });
+  p.addEventListener("mouseenter", () => { openPanel(i); clearInterval(panelTimer); });
+  p.addEventListener("focus", () => { openPanel(i); clearInterval(panelTimer); });
 });
+panelBox.addEventListener("mouseleave", panelDrift);
+panelBox.addEventListener("focusout", e => {
+  if (!panelBox.contains(e.relatedTarget)) panelDrift();
+});
+panelDrift();
+
+/* Testimonials: three columns drifting at their own pace */
+const VOICES = [
+  { id: "v1", name: "Marta Ruiz", img: "img/people/p1.jpg" },
+  { id: "v2", name: "Javier Soler", img: "img/people/p2.jpg" },
+  { id: "v3", name: "Antonio Vidal", img: "img/people/p3.jpg" },
+  { id: "v4", name: "Lucía Ferrer", img: "img/people/p4.jpg" },
+  { id: "v5", name: "Pablo Iglesias Mena", img: "img/people/p5.jpg" },
+  { id: "v6", name: "Elena Cortés", img: "img/people/p6.jpg" },
+  { id: "v7", name: "Sergio Nadal", img: "img/people/p7.jpg" },
+  { id: "v8", name: "Carmen Ortega", img: "img/people/p8.jpg" },
+  { id: "v9", name: "Rubén Castaño", img: "img/people/p9.jpg" }
+];
+
+const voiceCols = [...document.querySelectorAll(".voice-col")];
+
+function renderVoices(dict) {
+  voiceCols.forEach((col, c) => {
+    const mine = VOICES.filter((_, i) => i % voiceCols.length === c);
+    const cards = mine.map(v => `
+      <figure class="voice">
+        <p>${dict[v.id + ".q"]}</p>
+        <figcaption class="voice-who">
+          <img src="${v.img}" alt="" width="38" height="38" loading="lazy">
+          <span>
+            <span class="voice-name">${v.name}</span><br>
+            <span class="voice-role">${dict[v.id + ".r"]}</span>
+          </span>
+        </figcaption>
+      </figure>`).join("");
+    col.innerHTML = still ? cards : cards + cards;
+    col.style.animationDuration = col.dataset.speed + "s";
+  });
+}
 
 /* Marquee: duplicate for a seamless loop */
 const mq = document.getElementById("marquee");
@@ -163,3 +271,8 @@ document.getElementById("contactForm").addEventListener("submit", e => {
   );
   location.href = "mailto:info@levx-ascensores.es?subject=" + subject + "&body=" + body;
 });
+
+/* Start in the saved language (defaults to English) */
+let saved = "en";
+try { saved = localStorage.getItem("levx-lang") || "en"; } catch (e) {}
+setLang(saved);
