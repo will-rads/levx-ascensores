@@ -1,13 +1,16 @@
 # LEVX Ascensores design system (v2, lightweight)
 
 One-page trilingual site (EN default / ES / AR-RTL). Plain HTML/CSS/JS, no build step.
-Design skill: gpt-taste-2. Read: local-service landing, black and white, one dark orange accent.
+Design skill: gpt-taste-2. Read: local-service landing, black and white interface, orange sparks.
 
 ## Color
-`--bg #f4f4f3` ground · `--surface #fff` · `--ink #0b0b0b` · `--ink-2 #5d5d5d` ·
-`--accent #b8430f` (the only color on the page: CTAs, the process line, contact icons, focus rings)
-· `--line #e3e3e1`. Every photograph is forced to black and white with a CSS `grayscale(1)` filter,
-so replacement photos need no retouching. The emergency band is near-black, not orange.
+`--bg #f4f4f3` ground · `--surface #fff` · `--ink #0b0b0b` · `--ink-2 #5d5d5d` · `--line #e3e3e1`.
+`--accent #0b0b0b`: the interface is black on white, so every button, the active language chip and
+the emergency band are black. `--spark #d1500f` is a dark orange used only in small hits against
+black or white: the arrow inside the logo mark, the rule above an open panel name, the top edge of
+the emergency band, the process line, the contact icons, selection and focus rings. Photographs
+keep their own colors; only the collapsed service panels are desaturated, and they return to color
+when they open.
 
 ## Type
 Satoshi (Fontshare) 900 display / 700 UI / 400 body. Cairo for Arabic via `[lang=ar]`.
