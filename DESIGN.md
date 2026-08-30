@@ -1,11 +1,13 @@
 # LEVX Ascensores design system (v2, lightweight)
 
 One-page trilingual site (EN default / ES / AR-RTL). Plain HTML/CSS/JS, no build step.
-Design skill: gpt-taste-2. Read: local-service landing, clean premium light, one cobalt accent.
+Design skill: gpt-taste-2. Read: local-service landing, black and white, one dark orange accent.
 
 ## Color
-`--bg #f7f8fa` ground · `--surface #fff` · `--ink #14171c` · `--ink-2 #59626f` ·
-`--accent #2337d6` (the only accent, used for every CTA and the emergency band) · `--line #e4e7ed`.
+`--bg #f4f4f3` ground · `--surface #fff` · `--ink #0b0b0b` · `--ink-2 #5d5d5d` ·
+`--accent #b8430f` (the only color on the page: CTAs, the process line, contact icons, focus rings)
+· `--line #e3e3e1`. Every photograph is forced to black and white with a CSS `grayscale(1)` filter,
+so replacement photos need no retouching. The emergency band is near-black, not orange.
 
 ## Type
 Satoshi (Fontshare) 900 display / 700 UI / 400 body. Cairo for Arabic via `[lang=ar]`.
@@ -22,7 +24,7 @@ No eyebrows, no numbered labels, no dashes anywhere.
 
 ## Service panels
 Six flex panels, `flex: 1` collapsed and `flex: 4` open, 600ms width transition (pattern taken from
-the Namou partner portal area accordion). Collapsed media is grayscale; the open one goes to color.
+the Namou partner portal area accordion). Collapsed media sits darker; the open one brightens.
 Hover or click opens a panel; leaving the row restarts a 4.5s auto-advance. Stacks to
 height-animated rows under 900px. No auto-advance under prefers-reduced-motion.
 

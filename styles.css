@@ -1,15 +1,15 @@
 /* LEVX Ascensores
-   Clean light, one cobalt accent.
+   Black and white, one dark orange accent.
    Shape rule: interactive = pill, media and cards = 18px. */
 
 :root {
-  --bg: #f7f8fa;
+  --bg: #f4f4f3;
   --surface: #ffffff;
-  --ink: #14171c;
-  --ink-2: #59626f;
-  --accent: #2337d6;
-  --accent-deep: #1b2aad;
-  --line: #e4e7ed;
+  --ink: #0b0b0b;
+  --ink-2: #5d5d5d;
+  --accent: #b8430f;
+  --accent-deep: #8f3209;
+  --line: #e3e3e1;
   --r-media: 18px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -68,7 +68,7 @@ h1, h2 { text-wrap: balance; letter-spacing: -0.02em; }
 .btn-primary {
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 8px 20px -10px rgba(35, 55, 214, 0.5);
+  box-shadow: 0 8px 20px -10px rgba(11, 11, 11, 0.35);
 }
 
 .btn-primary:hover { background: var(--accent-deep); transform: translateY(-1px); }
@@ -186,7 +186,8 @@ h1, h2 { text-wrap: balance; letter-spacing: -0.02em; }
 
 .hero-media img {
   border-radius: var(--r-media);
-  box-shadow: 0 24px 60px -28px rgba(20, 23, 28, 0.35);
+  box-shadow: 0 24px 60px -28px rgba(11, 11, 11, 0.35);
+  filter: grayscale(1) contrast(1.05);
   height: min(62vh, 540px);
   width: 100%;
   object-fit: cover;
@@ -282,7 +283,7 @@ section h2 {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(10, 13, 22, 0.05) 30%, rgba(10, 13, 22, 0.85) 100%);
+  background: linear-gradient(180deg, rgba(8, 8, 8, 0.05) 30%, rgba(8, 8, 8, 0.86) 100%);
   pointer-events: none;
 }
 
@@ -291,14 +292,14 @@ section h2 {
   inset: -6px;
   background-position: center;
   background-size: cover;
-  filter: grayscale(0.85) brightness(0.7);
+  filter: grayscale(1) brightness(0.62) contrast(1.05);
   transition: filter 0.6s var(--ease), transform 1s var(--ease);
 }
 
 .panel.is-open { flex: 4 1 0; }
 
 .panel.is-open .panel-media {
-  filter: grayscale(0) brightness(0.78);
+  filter: grayscale(1) brightness(0.85) contrast(1.08);
   transform: scale(1.04);
 }
 
@@ -446,7 +447,7 @@ section h2 {
 /* ---------- Emergency band ---------- */
 
 .emergency {
-  background: var(--accent);
+  background: var(--ink);
   color: #fff;
   padding: clamp(2.8rem, 6vh, 4rem) 0;
 }
@@ -461,7 +462,7 @@ section h2 {
 
 .emergency h2 { margin-bottom: 0.4rem; }
 
-.emergency p { color: #c3cbff; }
+.emergency p { color: #b9b9b7; }
 
 /* ---------- Wide image ---------- */
 
@@ -469,6 +470,7 @@ section h2 {
 
 .wide-media img {
   width: 100%;
+  filter: grayscale(1) contrast(1.12) brightness(0.94);
   height: clamp(260px, 48vh, 460px);
   object-fit: cover;
 }
@@ -540,7 +542,7 @@ section h2 {
 .field input:focus, .field textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(35, 55, 214, 0.15);
+  box-shadow: 0 0 0 3px rgba(184, 67, 15, 0.18);
 }
 
 .field textarea { resize: vertical; min-height: 100px; }
