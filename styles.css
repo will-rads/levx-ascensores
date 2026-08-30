@@ -64,7 +64,7 @@ h1, h2 { text-wrap: balance; letter-spacing: -0.02em; }
   transition: background 0.2s, color 0.2s, transform 0.25s var(--ease), box-shadow 0.25s;
 }
 
-.btn:active { transform: scale(0.98); }
+.btn:active { transform: scale(0.96); }
 
 .btn-primary {
   background: var(--accent);
@@ -150,9 +150,10 @@ h1, h2 { text-wrap: balance; letter-spacing: -0.02em; }
   padding: 0.35rem 0.7rem;
   border-radius: 999px;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s, scale 0.2s var(--ease);
 }
 
+.lang-switch button:active { scale: 0.96; }
 .lang-switch button:hover { color: var(--ink); }
 .lang-switch button.active { background: var(--accent); color: #fff; }
 
@@ -210,6 +211,16 @@ h1, h2 { text-wrap: balance; letter-spacing: -0.02em; }
 @keyframes rise {
   to { opacity: 1; translate: 0 0; }
 }
+
+/* A hairline keeps photos from bleeding into the page */
+.hero-media img,
+.wide-media img,
+.voice-who img {
+  outline: 1px solid oklch(0 0 0 / 0.1);
+  outline-offset: -1px;
+}
+
+.deck-card.is-front .voice-who img { outline-color: oklch(1 0 0 / 0.1); }
 
 /* ---------- Brands marquee ---------- */
 
@@ -274,8 +285,10 @@ section h2 {
   text-align: start;
   cursor: pointer;
   isolation: isolate;
-  transition: flex 0.6s var(--ease);
+  transition: flex 0.6s var(--ease), scale 0.25s var(--ease);
 }
+
+.panel:active { scale: 0.98; }
 
 .panel::after {
   content: "";
@@ -355,7 +368,7 @@ section h2 {
 .panel-desc {
   display: block;
   max-width: 34ch;
-  color: #dfe3ef;
+  color: #e6e5e3;
   font-size: 0.98rem;
   line-height: 1.5;
 }
@@ -450,8 +463,10 @@ section h2 {
   width: min(280px, 76vw);
   margin: 0;
   cursor: pointer;
-  transition: transform 0.5s var(--ease), opacity 0.5s var(--ease);
+  transition: transform 0.5s var(--ease), opacity 0.5s var(--ease), scale 0.2s var(--ease);
 }
+
+.deck-card:active { scale: 0.96; }
 
 .deck-card.is-front {
   background: var(--ink);
@@ -476,8 +491,10 @@ section h2 {
   background: var(--surface);
   color: var(--ink);
   cursor: pointer;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, scale 0.2s var(--ease);
 }
+
+.deck-nav button:active { scale: 0.96; }
 
 .deck-nav button:hover, .deck-nav button:active {
   background: var(--ink);
@@ -583,7 +600,7 @@ section h2 {
 .contact-form {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: var(--r-media);
+  border-radius: 24px;
   padding: clamp(1.5rem, 3vw, 2.2rem);
 }
 
@@ -608,7 +625,7 @@ section h2 {
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.field input::placeholder, .field textarea::placeholder { color: #8b93a1; }
+.field input::placeholder, .field textarea::placeholder { color: #8d8d8a; }
 
 .field input:focus, .field textarea:focus {
   outline: none;
@@ -665,6 +682,7 @@ section h2 {
 @media (prefers-reduced-motion: reduce) {
   .marquee, .voice-col { animation: none; }
   .voice-cols { height: auto; mask-image: none; -webkit-mask-image: none; }
+  .deck-card, .panel, .panel-media, .panel-open { transition: none; }
   html { scroll-behavior: auto; }
 }
 
@@ -673,7 +691,6 @@ section h2 {
 :focus-visible {
   outline: 2px solid var(--spark);
   outline-offset: 3px;
-  border-radius: 6px;
 }
 
 /* ---------- Responsive ---------- */

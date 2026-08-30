@@ -17,7 +17,13 @@ Satoshi (Fontshare) 900 display / 700 UI / 400 body. Cairo for Arabic via `[lang
 Display tracking -0.02em (reset to 0 for Arabic).
 
 ## Shape rule
-Interactive = pill (999px). Media and cards = 18px (`--r-media`). Inputs = 12px.
+Interactive = pill (999px). Media and cards = 18px (`--r-media`). Inputs = 12px, inside a contact
+card at 24px so the nested corners stay concentric.
+
+## Touch and edges
+Anything clickable shrinks to `scale(0.96)` while pressed (service panels use `0.98`, they are far
+bigger). Photographs carry a `1px` hairline outline at 10% black, or 10% white on the black deck
+card, so they do not bleed into the page. The focus ring never changes an element's own radius.
 
 ## Sections
 Split hero with generated photo · brand logo marquee · expanding service panels ·
