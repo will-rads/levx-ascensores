@@ -304,14 +304,14 @@ section h2 {
   inset: -6px;
   background-position: center;
   background-size: cover;
-  filter: grayscale(0.85) brightness(0.7);
+  filter: brightness(0.5) contrast(1.05);
   transition: filter 0.6s var(--ease), transform 1s var(--ease);
 }
 
 .panel.is-open { flex: 4 1 0; }
 
 .panel.is-open .panel-media {
-  filter: grayscale(0) brightness(0.8);
+  filter: brightness(0.82) contrast(1.12);
   transform: scale(1.04);
 }
 

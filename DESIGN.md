@@ -49,10 +49,13 @@ star rating in orange, and portraits keep their color.
 No full stop at the end of any heading, in any language.
 
 ## Images
-`img/hero.jpg`, `img/technician.jpg`, `img/doors-wide.jpg`, `img/services/*.jpg`, `img/people/*.jpg`:
-Gemini-generated (nano banana pro), cool-toned editorial placeholders. Swap for real photos at the
-same paths. `img/brands/*.png`: real manufacturer logos from Wikimedia Commons, converted to
-grayscale with the white knocked out, shown at 32% opacity.
+Real black and white photography supplied by Levier: `img/hero.jpg` (steel cabin), `img/doors-wide.jpg`
+(closed doors in a marble lobby), and three service panels (maintenance, modernization, installation).
+The three remaining service photos are still generated placeholders, desaturated so the panel row reads
+as one set. Reviewer portraits in `img/people/` stay in color. `img/brands/*.png`: real manufacturer
+logos from Wikimedia Commons, grayscale with the white knocked out, shown at 55% opacity.
+Because the photography is already monochrome, service panels reveal on brightness and contrast
+rather than on color.
 
 ## i18n
 Same mechanism as v1: `I18N` dict in script.js, `data-i18n` / `data-i18n-ph`, localStorage `levx-lang`,
