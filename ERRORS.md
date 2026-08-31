@@ -35,3 +35,6 @@
   use IntersectionObserver. Keep it that way.
 - **A blur filter on small logos reads as "out of focus"** on a phone, not as softness. Lower the
   opacity instead.
+
+- **Fontshare only serves one family per URL.** Requesting `f[]=satoshi...&f[]=gambarino@400` in a
+  single link silently returns Satoshi alone. Give each family its own `<link>` tag.

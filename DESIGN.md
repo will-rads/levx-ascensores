@@ -13,8 +13,11 @@ keep their own colors; only the collapsed service panels are desaturated, and th
 when they open.
 
 ## Type
-Satoshi (Fontshare) 900 display / 700 UI / 400 body. Cairo for Arabic via `[lang=ar]`.
-Display tracking -0.02em (reset to 0 for Arabic).
+Gambarino (Fontshare, single 400 weight) for every `h1` and `h2`. Satoshi 700 UI / 400 body, and
+Satoshi 900 for the LEVX wordmark and the small labels on the service panels. Arabic ignores
+Gambarino and sets headings in Cairo 900 via `[lang=ar]`, tracking reset to 0.
+Fontshare drops the second family when two are requested in one URL, so Satoshi and Gambarino each
+need their own `<link>`.
 
 ## Shape rule
 Interactive = pill (999px). Media and cards = 18px (`--r-media`). Inputs = 12px, inside a contact
