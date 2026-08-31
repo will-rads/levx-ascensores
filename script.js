@@ -5,6 +5,8 @@ const I18N = {
     "nav.services": "Services", "nav.why": "Why us", "nav.contact": "Contact",
     "nav.services2": "Services", "nav.why2": "Why us", "nav.contact2": "Contact",
     "header.cta": "Call 24/7",
+    "hero.cue": "Going up",
+    "hero.scroll": "Scroll",
     "hero.title": "Your elevator, in expert hands",
     "hero.lede": "Maintenance, repair and modernization for every brand in Spain. One contract, one call, around the clock.",
     "hero.cta": "Request a free audit",
@@ -55,6 +57,8 @@ const I18N = {
     "nav.services": "Servicios", "nav.why": "Por qué LEVX", "nav.contact": "Contacto",
     "nav.services2": "Servicios", "nav.why2": "Por qué LEVX", "nav.contact2": "Contacto",
     "header.cta": "Llame 24/7",
+    "hero.cue": "Subiendo",
+    "hero.scroll": "Desliza",
     "hero.title": "Su ascensor, en manos expertas",
     "hero.lede": "Mantenimiento, reparación y modernización de todas las marcas en España. Un contrato, una llamada, a cualquier hora.",
     "hero.cta": "Solicitar auditoría gratuita",
@@ -105,6 +109,8 @@ const I18N = {
     "nav.services": "خدماتنا", "nav.why": "لماذا نحن", "nav.contact": "اتصل بنا",
     "nav.services2": "خدماتنا", "nav.why2": "لماذا نحن", "nav.contact2": "اتصل بنا",
     "header.cta": "اتصل ٢٤/٧",
+    "hero.cue": "نصعد",
+    "hero.scroll": "مرّر",
     "hero.title": "مصعدك في أيدٍ خبيرة",
     "hero.lede": "صيانة وإصلاح وتحديث لجميع الماركات في إسبانيا. عقد واحد، اتصال واحد، على مدار الساعة.",
     "hero.cta": "اطلب فحصاً مجانياً",
@@ -181,6 +187,60 @@ document.body.prepend(sentinel);
 new IntersectionObserver(([e]) =>
   header.classList.toggle("scrolled", !e.isIntersecting)
 ).observe(sentinel);
+
+/* The bar turns white while it is sitting over the hero video */
+const hero = document.getElementById("hero");
+new IntersectionObserver(
+  ([e]) => header.classList.toggle("over-hero", e.isIntersecting),
+  { rootMargin: "-68px 0px 0px 0px", threshold: 0 }
+).observe(hero);
+
+/* Hero intro: the video is scrubbed by the scroll, the copy arrives when it ends.
+   No scroll listener: a rAF loop runs only while the hero is on screen. */
+const heroVideo = document.getElementById("heroVideo");
+const heroCue = document.getElementById("heroCue");
+const heroCopy = document.getElementById("heroCopy");
+const noMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (noMotion) {
+  hero.classList.add("no-scrub");
+} else {
+  const ramp = (a, b, p) => {
+    const t = Math.min(Math.max((p - a) / (b - a), 0), 1);
+    return t * t * (3 - 2 * t);
+  };
+  let running = false;
+  let at = 0;
+
+  function heroFrame() {
+    if (!running) return;
+    const travel = hero.offsetHeight - window.innerHeight;
+    const p = travel > 0
+      ? Math.min(Math.max(-hero.getBoundingClientRect().top / travel, 0), 1)
+      : 1;
+
+    const dur = heroVideo.duration;
+    if (dur && heroVideo.readyState >= 2) {
+      const want = p * (dur - 0.06);
+      at += (want - at) * 0.2;
+      if (Math.abs(want - at) < 0.004) at = want;
+      heroVideo.currentTime = at;
+    }
+
+    heroCue.style.opacity = 1 - ramp(0.56, 0.82, p);
+    const shown = ramp(0.84, 1, p);
+    heroCopy.style.opacity = shown;
+    heroCopy.style.translate = "0 " + (1 - shown) * 20 + "px";
+    heroCopy.inert = shown < 0.5;
+
+    requestAnimationFrame(heroFrame);
+  }
+
+  new IntersectionObserver(([e]) => {
+    running = e.isIntersecting;
+    if (running) requestAnimationFrame(heroFrame);
+  }).observe(hero);
+}
 
 /* Service panels: expand on hover or click, drift on their own when left alone */
 const panels = [...document.querySelectorAll(".panel")];

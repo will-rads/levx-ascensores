@@ -43,19 +43,32 @@
 
 <main id="top">
 
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <h1 data-i18n="hero.title">Your elevator, in expert hands</h1>
-        <p class="lede" data-i18n="hero.lede">Maintenance, repair and modernization for every brand in Spain. One contract, one call, around the clock.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="#contact" data-i18n="hero.cta">Request a free audit</a>
-          <a class="btn btn-quiet" href="tel:+34600000000" dir="ltr">+34 600 000 000</a>
+  <section class="hero" id="hero">
+    <div class="hero-stage">
+      <div class="hero-bg" aria-hidden="true">
+        <video id="heroVideo" poster="img/hero-poster.jpg" muted playsinline preload="auto" width="1600" height="900">
+          <source src="img/hero.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="wrap hero-layers">
+        <div class="hero-cue" id="heroCue">
+          <p class="cue-line" data-i18n="hero.cue">Going up</p>
+          <p class="cue-hint">
+            <span data-i18n="hero.scroll">Scroll</span>
+            <svg width="14" height="20" viewBox="0 0 14 20" fill="none" aria-hidden="true">
+              <path d="M7 1v17m0 0l-5-5m5 5l5-5" stroke="#D1500F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </p>
+        </div>
+        <div class="hero-copy" id="heroCopy">
+          <h1 data-i18n="hero.title">Your elevator, in expert hands</h1>
+          <p class="lede" data-i18n="hero.lede">Maintenance, repair and modernization for every brand in Spain. One contract, one call, around the clock.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#contact" data-i18n="hero.cta">Request a free audit</a>
+            <a class="btn btn-quiet" href="tel:+34600000000" dir="ltr">+34 600 000 000</a>
+          </div>
         </div>
       </div>
-      <figure class="hero-media">
-        <img src="img/hero.jpg" alt="Brushed steel elevator cabin with a marble floor" width="928" height="1152">
-      </figure>
     </div>
   </section>
 
