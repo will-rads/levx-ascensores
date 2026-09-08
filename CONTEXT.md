@@ -5,6 +5,7 @@ Marketing site for Levier's elevator maintenance/repair company in Spain. Will r
 ## Files
 
 - `index.html`, `styles.css`, `script.js`: one-page site, plain HTML/CSS/JS, no build or runtime dependencies.
+- `motion.js`: early site motion preference, shared by CSS and interactions.
 - `img/`: video, service images, portraits and manufacturer logos.
 - `esignature/index.html`: separate email signature using the original blue branding.
 - `logos/`: ignored logo concepts; `levx-logo-og.png`: original logo.
@@ -21,7 +22,7 @@ Run from this folder:
 
 ```powershell
 node --check script.js
-node --test hero.test.cjs reviews.test.cjs nav.test.cjs
+node --test hero.test.cjs reviews.test.cjs nav.test.cjs motion.test.cjs
 git diff --check
 ```
 

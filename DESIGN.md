@@ -40,3 +40,7 @@ Services expand from flex 1 to 4 over 600ms and advance every 7 seconds; below 9
 Levier supplied `doors-wide.jpg` and the maintenance, modernization and installation photos. Repairs, accessibility and retrofit use stock images; building and CTA images are in `img/`. Reviewer portraits are generated and not real customers. Manufacturer PNGs originated from Wikimedia Commons and are grayscale/transparent at low opacity. The email signature keeps the original blue logo branding.
 
 Desktop navigation follows Cedars: centered dark translucent square menu, 250ms sliding orange highlight on hover/focus, active section tracking, reduced-motion support. Mobile navigation remains hidden.
+
+## Motion preference
+
+`motion.js` runs before CSS and sets `data-motion` from the system preference or a saved site override. A square bottom-corner EN/ES/AR button appears for reduced-motion visitors and anyone with a saved choice. It enables or reduces all site animations, remembers `levx-motion` locally and reloads to apply. History state preserves the current visit if storage is blocked. Computer settings are unchanged; Safari media permission is separate.

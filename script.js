@@ -188,6 +188,24 @@ const I18N = {
   }
 };
 
+const motionToggle = document.getElementById("motionToggle");
+function updateMotionButton(lang) {
+  const labels = {
+    en: ["Enable animations", "Reduce animations"],
+    es: ["Activar animaciones", "Reducir animaciones"],
+    ar: ["تفعيل الحركة", "تقليل الحركة"]
+  };
+  motionToggle.hidden = document.documentElement.dataset.motionControl !== "show";
+  motionToggle.textContent = (labels[lang] || labels.en)[document.documentElement.dataset.motion === "off" ? 0 : 1];
+}
+motionToggle.addEventListener("click", () => {
+  const preference = document.documentElement.dataset.motion === "off" ? "on" : "off";
+  // History state keeps this visit working even when persistent storage is blocked.
+  history.replaceState({ ...history.state, levxMotion: preference }, "");
+  try { localStorage.setItem("levx-motion", preference); } catch (_) {}
+  location.reload();
+});
+
 function setLang(lang) {
   const dict = I18N[lang] || I18N.en;
   document.documentElement.lang = lang;
@@ -203,6 +221,7 @@ function setLang(lang) {
   document.querySelectorAll(".lang-switch button").forEach(b =>
     b.classList.toggle("active", b.dataset.lang === lang));
   renderVoices(dict);
+  updateMotionButton(lang);
   try { localStorage.setItem("levx-lang", lang); } catch (e) {}
 }
 
@@ -271,7 +290,7 @@ navLinks.forEach(link => navSections.observe(document.querySelector(link.hash)))
 const heroVideo = document.getElementById("heroVideo");
 const heroCue = document.getElementById("heroCue");
 const heroCopy = document.getElementById("heroCopy");
-const noMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const noMotion = document.documentElement.dataset.motion === "off";
 
 if (noMotion) {
   hero.classList.add("no-scrub");
@@ -355,7 +374,7 @@ if (noMotion) {
 /* Service panels: expand on hover or click, drift on their own when left alone */
 const panels = [...document.querySelectorAll(".panel")];
 const panelBox = document.getElementById("panels");
-const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const still = noMotion;
 let panelTimer = null;
 
 function openPanel(i) {

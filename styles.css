@@ -328,9 +328,7 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; text-wrap: balance;
 
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.8rem; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .cue-hint svg { animation: bob 1.9s var(--ease) infinite; }
-}
+html[data-motion="on"] .cue-hint svg { animation: bob 1.9s var(--ease) infinite; }
 
 @keyframes bob {
   0%, 100% { translate: 0 0; }
@@ -622,10 +620,8 @@ section h2 {
   to { transform: translateX(-50%); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .mobile-voices { overflow-x: auto; }
-  .voice-row { animation: none; }
-}
+html[data-motion="off"] .mobile-voices { overflow-x: auto; }
+html[data-motion="off"] .voice-row { animation: none; }
 
 /* ---------- Why (statement) ---------- */
 
@@ -937,23 +933,34 @@ section h2 {
 
 /* ---------- Reveal ---------- */
 
-@media (prefers-reduced-motion: no-preference) {
-  .reveal {
-    opacity: 0;
-    translate: 0 22px;
-    transition: opacity 0.7s var(--ease), translate 0.7s var(--ease);
-  }
-  .reveal.in { opacity: 1; translate: 0 0; }
+html[data-motion="on"] .reveal {
+  opacity: 0;
+  translate: 0 22px;
+  transition: opacity 0.7s var(--ease), translate 0.7s var(--ease);
 }
+html[data-motion="on"] .reveal.in { opacity: 1; translate: 0 0; }
+html[data-motion="off"] :is(.marquee, .voice-col, .cue-hint svg) { animation: none; }
+html[data-motion="off"] .hero-bg video { display: none; }
+html[data-motion="off"] .voice-cols { height: auto; mask-image: none; -webkit-mask-image: none; }
+html[data-motion="off"] :is(.nav-pill, .main-nav a, .panel, .panel-media, .panel-open) { transition: none; }
+html[data-motion="off"] { scroll-behavior: auto; }
 
-@media (prefers-reduced-motion: reduce) {
-  .marquee, .voice-col { animation: none; }
-  .hero-bg video { display: none; }
-  .cue-hint svg { animation: none; }
-  .voice-cols { height: auto; mask-image: none; -webkit-mask-image: none; }
-  .nav-pill, .main-nav a, .panel, .panel-media, .panel-open { transition: none; }
-  html { scroll-behavior: auto; }
+.motion-toggle {
+  position: fixed;
+  inset-inline-end: 16px;
+  bottom: 16px;
+  z-index: 60;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--ink);
+  color: #fff;
+  font: 400 0.9rem var(--font-display);
+  cursor: pointer;
+  box-shadow: 0 3px 12px #0003;
 }
+.motion-toggle[hidden] { display: none; }
+[lang="ar"] .motion-toggle { font-family: "Cairo", sans-serif; }
 
 /* ---------- Focus ---------- */
 
