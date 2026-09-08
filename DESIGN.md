@@ -20,8 +20,8 @@ Fontshare drops the second family when two are requested in one URL, so Satoshi 
 need their own `<link>`.
 
 ## Shape rule
-Interactive = pill (999px). Media and cards = 18px (`--r-media`). Inputs = 12px, inside a contact
-card at 24px so the nested corners stay concentric.
+Everything is square. Radius 0 on buttons, language chips, inputs, the contact card, service
+panels, testimonial cards and portraits. `--r-media` is `0px` and stays that way.
 
 ## Touch and edges
 Anything clickable shrinks to `scale(0.96)` while pressed (service panels use `0.98`, they are far
@@ -29,13 +29,29 @@ bigger). Photographs carry a `1px` hairline outline at 10% black, or 10% white o
 card, so they do not bleed into the page. The focus ring never changes an element's own radius.
 
 ## Sections
-Scroll-scrubbed video intro · brand logo marquee · expanding service panels ·
+Scroll-scrubbed video intro · brand logo marquee · four-cell stats row (counts up on arrival) ·
+expanding service panels · buildings split (photo + black panel + 2x2 credentials) ·
 drifting testimonial columns · big-statement "why" with 2 columns + process line ·
-full-bleed blue emergency band · full-bleed image break · split contact (channels + form) · footer.
-No eyebrows, no numbered labels, no dashes anywhere.
+full-bleed black emergency band · dark CTA over a dimmed lobby photo · split contact
+(channels + form) · footer. No eyebrows, no numbered labels, no dashes anywhere.
+
+The dark CTA replaced the old full-bleed image break: same photo, now carrying the closing ask
+directly above the form.
+
+## Type in controls
+Gambarino carries anything clickable, not just headings: buttons, header nav and footer nav, at
+weight 400 (it ships one weight, 700 would synthesise a fake bold). Satoshi keeps body text, form
+labels, the LEVX wordmark and small tracked labels. Arabic swaps all of it to Cairo, because
+Gambarino has no Arabic glyphs.
+
+## Stats
+Four cells under the brand belt, hairline dividers, Gambarino numerals with `tabular-nums`. Three
+of them count up once from 0 over 1.6s on a cubic ease-out when the row is 60% visible; 24/7 is
+static. Reduced motion writes the final value straight in. The numbers carry no `data-i18n`, so a
+language switch never overwrites a finished count.
 
 ## Hero intro
-The hero is a 260vh track (220vh under 900px) with a `position: sticky` 100vh stage pinned inside it.
+The hero is a 340vh track (280vh under 900px) with a `position: sticky` 100vh stage pinned inside it.
 Scroll position maps to `heroVideo.currentTime`, so the intro plays as you scroll rather than on its
 own. A rAF loop does the seeking and it only runs while an IntersectionObserver says the hero is on
 screen, so there is still no scroll listener anywhere.
@@ -56,7 +72,7 @@ height, hides the cue, shows the copy, and the closing frame stands in as a stil
 ## Service panels
 Six flex panels, `flex: 1` collapsed and `flex: 4` open, 600ms width transition (pattern taken from
 the Namou partner portal area accordion). Collapsed media sits darker; the open one brightens.
-Hover or click opens a panel; leaving the row restarts a 4.5s auto-advance. Stacks to
+Hover or click opens a panel; leaving the row restarts a 7s auto-advance. Stacks to
 height-animated rows under 900px. No auto-advance under prefers-reduced-motion.
 
 ## Testimonials
@@ -78,8 +94,10 @@ wide-lobby start frame.
 
 Real black and white photography supplied by Levier: `img/doors-wide.jpg`
 (closed doors in a marble lobby), and three service panels (maintenance, modernization, installation).
-The three remaining service photos are still generated placeholders, desaturated so the panel row reads
-as one set. Reviewer portraits in `img/people/` stay in color. `img/brands/*.png`: real manufacturer
+The other three service panels are `.webp` stock: `repairs` (technician with a tablet),
+`accessibility` (cab interior) and `retrofit` (two engineers with a blueprint).
+`img/building-tower.webp` fills the buildings split and `img/lobby-doors.webp` sits behind the dark
+CTA at 82% black. Reviewer portraits in `img/people/` stay in color. `img/brands/*.png`: real manufacturer
 logos from Wikimedia Commons, grayscale with the white knocked out, shown at 55% opacity.
 Because the photography is already monochrome, service panels reveal on brightness and contrast
 rather than on color.

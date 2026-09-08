@@ -17,6 +17,16 @@ const I18N = {
     "svc4.name": "Accessibility", "svc4.desc": "Stairlifts and adaptations for reduced mobility.",
     "svc5.name": "New installations", "svc5.desc": "From plan to commissioning in new buildings.",
     "svc6.name": "Buildings without elevators", "svc6.desc": "We fit elevators into buildings never designed for one.",
+    "stat1": "Years of experience", "stat2": "Elevators under service",
+    "stat3": "Client retention", "stat4": "Emergency response",
+    "bld.title": "Trusted with the buildings people live in",
+    "bld.p1": "Residential communities, offices, hotels and clinics. Every contract is personal, and every elevator carries our name.",
+    "bld.p2": "Our technicians control every stage: survey, installation, modernization and lifelong maintenance. No subcontractors.",
+    "bld.c1": "EN 81 compliant", "bld.c2": "Certified technicians",
+    "bld.c3": "All major brands", "bld.c4": "Signed report every visit",
+    "cta.title": "Let's talk about your building",
+    "cta.sub": "Tell us what is happening and get a binding quote. Emergencies are answered around the clock.",
+    "cta.primary": "Request a free audit",
     "voices.title": "From the buildings we look after",
     "v1.q": "They took over a lift two other firms had given up on. It has not stopped since.",
     "v1.r": "Property manager, Madrid",
@@ -69,6 +79,16 @@ const I18N = {
     "svc4.name": "Accesibilidad", "svc4.desc": "Salvaescaleras y adaptaciones para movilidad reducida.",
     "svc5.name": "Obra nueva", "svc5.desc": "Del proyecto a la puesta en marcha en edificios nuevos.",
     "svc6.name": "Fincas sin ascensor", "svc6.desc": "Instalamos ascensores en edificios que no fueron diseñados para tenerlo.",
+    "stat1": "Años de experiencia", "stat2": "Ascensores en servicio",
+    "stat3": "Clientes que renuevan", "stat4": "Respuesta de urgencia",
+    "bld.title": "La confianza de los edificios donde se vive",
+    "bld.p1": "Comunidades de vecinos, oficinas, hoteles y clínicas. Cada contrato es personal y cada ascensor lleva nuestro nombre.",
+    "bld.p2": "Nuestros técnicos controlan todas las fases: revisión, instalación, modernización y mantenimiento de por vida. Sin subcontratas.",
+    "bld.c1": "Conforme a EN 81", "bld.c2": "Técnicos certificados",
+    "bld.c3": "Todas las grandes marcas", "bld.c4": "Parte firmado cada visita",
+    "cta.title": "Hablemos de su edificio",
+    "cta.sub": "Cuéntenos qué está pasando y reciba un presupuesto vinculante. Las urgencias se atienden a cualquier hora.",
+    "cta.primary": "Solicitar auditoría gratuita",
     "voices.title": "Las fincas que cuidamos",
     "v1.q": "Se hicieron cargo de un ascensor que otras dos empresas habían dado por perdido. No ha vuelto a pararse.",
     "v1.r": "Administradora de fincas, Madrid",
@@ -121,6 +141,16 @@ const I18N = {
     "svc4.name": "تسهيل الوصول", "svc4.desc": "مصاعد سلالم وتعديلات لذوي الحركة المحدودة.",
     "svc5.name": "تركيبات جديدة", "svc5.desc": "من المخطط إلى التشغيل في المباني الجديدة.",
     "svc6.name": "مبانٍ بدون مصعد", "svc6.desc": "نركّب المصاعد في مبانٍ لم تُصمَّم أصلاً لمصعد.",
+    "stat1": "سنوات من الخبرة", "stat2": "مصعداً تحت الصيانة",
+    "stat3": "نسبة تجديد العقود", "stat4": "استجابة للطوارئ",
+    "bld.title": "ثقة المباني التي يسكنها الناس",
+    "bld.p1": "مجمعات سكنية ومكاتب وفنادق وعيادات. كل عقد شخصي، وكل مصعد يحمل اسمنا.",
+    "bld.p2": "فنيونا يتولون كل مرحلة: المعاينة والتركيب والتحديث والصيانة مدى العمر. بلا مقاولين من الباطن.",
+    "bld.c1": "مطابق لمعيار EN 81", "bld.c2": "فنيون معتمدون",
+    "bld.c3": "جميع الماركات الكبرى", "bld.c4": "تقرير موقّع كل زيارة",
+    "cta.title": "لنتحدث عن مبناك",
+    "cta.sub": "أخبرنا بما يحدث واحصل على عرض سعر ملزم. الطوارئ تُجاب على مدار الساعة.",
+    "cta.primary": "اطلب فحصاً مجانياً",
     "voices.title": "المباني التي نعتني بها",
     "v1.q": "تولّوا مصعداً استسلمت له شركتان قبلهم. لم يتوقف منذ ذلك الحين.",
     "v1.r": "مديرة عقارات، مدريد",
@@ -261,7 +291,7 @@ function panelDrift() {
   panelTimer = setInterval(() => {
     const at = panels.findIndex(p => p.classList.contains("is-open"));
     openPanel((at + 1) % panels.length);
-  }, 4500);
+  }, 7000);
 }
 
 panels.forEach((p, i) => {
@@ -374,6 +404,27 @@ deckStage.addEventListener("click", e => {
 /* Marquee: duplicate for a seamless loop */
 const mq = document.getElementById("marquee");
 mq.innerHTML += mq.innerHTML;
+
+/* Stats count up once, when the row arrives. ponytail: no easing lib, one cubic ease-out. */
+const countIO = new IntersectionObserver((entries, obs) => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    obs.unobserve(en.target);
+    const el = en.target;
+    const to = Number(el.dataset.to);
+    const sfx = el.dataset.suffix || "";
+    const done = () => { el.textContent = to.toLocaleString("en-US") + sfx; };
+    if (still) return done();
+    const t0 = performance.now();
+    (function tick(t) {
+      const p = Math.min((t - t0) / 1600, 1);
+      if (p === 1) return done();
+      el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))).toLocaleString("en-US") + sfx;
+      requestAnimationFrame(tick);
+    })(t0);
+  });
+}, { threshold: 0.6 });
+document.querySelectorAll(".stat-num[data-to]").forEach(el => countIO.observe(el));
 
 /* Reveal on scroll */
 const io = new IntersectionObserver(entries => {

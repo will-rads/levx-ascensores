@@ -12,18 +12,15 @@
 <link href="https://api.fontshare.com/v2/css?f[]=gambarino@400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230B0B0B'/><path d='M16 24V10m0 0l-5 5m5-5l5 5' stroke='%23D1500F' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230B0B0B'/></svg>">
 </head>
 <body>
 
 <header class="site-header" id="siteHeader">
   <div class="wrap header-row">
     <a class="brand" href="#top" aria-label="LEVX Ascensores, home">
-      <svg width="32" height="32" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <rect width="34" height="34" rx="9" fill="#0B0B0B"/>
-        <path d="M17 24V12m0 0l-4.5 4.5M17 12l4.5 4.5" stroke="#D1500F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
       <span class="brand-name">LEVX</span>
+      <span class="brand-sub">Ascensores</span>
     </a>
     <nav class="main-nav" aria-label="Main">
       <a href="#services" data-i18n="nav.services">Services</a>
@@ -83,6 +80,27 @@
     </div>
   </div>
 
+  <section class="stats" aria-label="LEVX in numbers">
+    <div class="wrap stat-row">
+      <div class="stat">
+        <span class="stat-num" data-to="35">0</span>
+        <span class="stat-label" data-i18n="stat1">Years of experience</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-to="2400" data-suffix="+">0</span>
+        <span class="stat-label" data-i18n="stat2">Elevators under service</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-to="98" data-suffix="%">0</span>
+        <span class="stat-label" data-i18n="stat3">Client retention</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" dir="ltr">24/7</span>
+        <span class="stat-label" data-i18n="stat4">Emergency response</span>
+      </div>
+    </div>
+  </section>
+
   <section class="services" id="services">
     <div class="wrap">
       <h2 class="reveal" data-i18n="services.title">Everything your elevator needs</h2>
@@ -96,7 +114,7 @@
           </span>
         </button>
         <button class="panel" type="button" aria-expanded="false">
-          <span class="panel-media" style="background-image:url(img/services/repairs.jpg)"></span>
+          <span class="panel-media" style="background-image:url(img/services/repairs.webp)"></span>
           <span class="panel-tab" data-i18n="svc2.name">Repairs</span>
           <span class="panel-open">
             <span class="panel-name" data-i18n="svc2.name">Repairs</span>
@@ -112,7 +130,7 @@
           </span>
         </button>
         <button class="panel" type="button" aria-expanded="false">
-          <span class="panel-media" style="background-image:url(img/services/accessibility.jpg)"></span>
+          <span class="panel-media" style="background-image:url(img/services/accessibility.webp)"></span>
           <span class="panel-tab" data-i18n="svc4.name">Accessibility</span>
           <span class="panel-open">
             <span class="panel-name" data-i18n="svc4.name">Accessibility</span>
@@ -128,13 +146,31 @@
           </span>
         </button>
         <button class="panel" type="button" aria-expanded="false">
-          <span class="panel-media" style="background-image:url(img/services/retrofit.jpg)"></span>
+          <span class="panel-media" style="background-image:url(img/services/retrofit.webp)"></span>
           <span class="panel-tab" data-i18n="svc6.name">Buildings without elevators</span>
           <span class="panel-open">
             <span class="panel-name" data-i18n="svc6.name">Buildings without elevators</span>
             <span class="panel-desc" data-i18n="svc6.desc">We fit elevators into buildings never designed for one.</span>
           </span>
         </button>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="buildings" id="buildings">
+    <div class="buildings-split">
+      <img src="img/building-tower.webp" alt="A glass elevator running up the outside of an office tower" loading="lazy" width="1280" height="838">
+      <div class="buildings-copy">
+        <h2 data-i18n="bld.title">Trusted with the buildings people live in</h2>
+        <p data-i18n="bld.p1">Residential communities, offices, hotels and clinics. Every contract is personal, and every elevator carries our name.</p>
+        <p data-i18n="bld.p2">Our technicians control every stage: survey, installation, modernization and lifelong maintenance. No subcontractors.</p>
+        <ul class="creds">
+          <li data-i18n="bld.c1">EN 81 compliant</li>
+          <li data-i18n="bld.c2">Certified technicians</li>
+          <li data-i18n="bld.c3">All major brands</li>
+          <li data-i18n="bld.c4">Signed report every visit</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -182,9 +218,16 @@
     </div>
   </section>
 
-  <figure class="wide-media">
-    <img src="img/doors-wide.jpg" alt="Closed steel elevator doors in a marble lobby" loading="lazy">
-  </figure>
+  <section class="cta-dark">
+    <div class="wrap cta-inner">
+      <h2 data-i18n="cta.title">Let's talk about your building</h2>
+      <p data-i18n="cta.sub">Tell us what is happening and get a binding quote. Emergencies are answered around the clock.</p>
+      <div class="cta-btns">
+        <a class="btn btn-invert" href="#contact" data-i18n="cta.primary">Request a free audit</a>
+        <a class="btn btn-ghost" href="tel:+34600000000" dir="ltr">+34 600 000 000</a>
+      </div>
+    </div>
+  </section>
 
   <section class="contact" id="contact">
     <div class="wrap contact-grid">
