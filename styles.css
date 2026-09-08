@@ -137,7 +137,14 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; text-wrap: balance;
   height: 68px;
 }
 
-.brand { display: flex; align-items: baseline; gap: 0.55rem; text-decoration: none; }
+.brand { display: flex; align-items: baseline; gap: 0.55rem; text-decoration: none; flex-shrink: 0; }
+
+.site-header .brand-name, .site-header .brand-sub {
+  font-family: "Gambarino", serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.site-header .brand-name { font-size: 1.5rem; }
 
 .brand-sub {
   font-size: 0.72rem;
@@ -312,7 +319,7 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; text-wrap: balance;
   outline-offset: -1px;
 }
 
-.deck-card.is-front .voice-who img { outline-color: oklch(1 0 0 / 0.1); }
+.mobile-voices .voice-who img { outline-color: oklch(1 0 0 / 0.1); }
 
 /* ---------- Brands marquee ---------- */
 
@@ -534,63 +541,61 @@ section h2 {
 
 .stars svg { width: 14px; height: 14px; }
 
-/* ---------- Phone: the same reviews as a deck ---------- */
+/* ---------- Phone: two opposing review rows ---------- */
 
-.deck {
+.mobile-voices {
   display: none;
-  overflow-x: clip;
+  overflow: hidden;
   margin-inline: calc(-1 * clamp(1.25rem, 4vw, 2.5rem));
+  direction: ltr;
 }
 
-.deck-stage {
-  position: relative;
-  height: 340px;
+.voice-row {
+  display: flex;
+  width: max-content;
+  animation: voiceAcross 38s linear infinite;
 }
 
-.deck-card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: min(280px, 76vw);
+.voice-row + .voice-row {
+  margin-top: 14px;
+  animation-duration: 44s;
+  animation-direction: reverse;
+}
+
+.voice-group {
+  display: flex;
+  gap: 10px;
+  padding-right: 10px;
+  flex-shrink: 0;
+}
+
+.mobile-voices .voice {
+  display: flex;
+  flex-direction: column;
+  width: 258px;
+  min-height: 230px;
+  padding: 16px;
   margin: 0;
-  cursor: pointer;
-  transition: transform 0.5s var(--ease), opacity 0.5s var(--ease), scale 0.2s var(--ease);
-}
-
-.deck-card:active { scale: 0.96; }
-
-.deck-card.is-front {
   background: var(--ink);
-  border-color: var(--spark);
   color: #fff;
-  box-shadow: 0 18px 40px -20px rgba(11, 11, 11, 0.6);
 }
 
-.deck-card.is-front p { color: #fff; }
-.deck-card.is-front .voice-role { color: #b9b9b7; }
+.mobile-voices .voice-who { order: -1; margin-bottom: 18px; }
+.mobile-voices .voice-role { color: #b9b9b7; }
+.mobile-voices .voice p { color: #fff; font-size: 0.88rem; }
+.mobile-voices .stars { order: 1; margin: auto 0 0; justify-content: flex-end; }
+[dir="rtl"] .mobile-voices .voice { direction: rtl; }
+.mobile-voices:hover .voice-row,
+.mobile-voices:focus-within .voice-row,
+.mobile-voices:active .voice-row { animation-play-state: paused; }
 
-.deck-nav { display: flex; justify-content: center; gap: 0.7rem; }
-
-.deck-nav button {
-  appearance: none;
-  width: 46px;
-  height: 46px;
-  display: grid;
-  place-items: center;
-  border: 1.5px solid var(--line);
-  border-radius: 0;
-  background: var(--surface);
-  color: var(--ink);
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, border-color 0.2s, scale 0.2s var(--ease);
+@keyframes voiceAcross {
+  to { transform: translateX(-50%); }
 }
 
-.deck-nav button:active { scale: 0.96; }
-
-.deck-nav button:hover, .deck-nav button:active {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: #fff;
+@media (prefers-reduced-motion: reduce) {
+  .mobile-voices { overflow-x: auto; }
+  .voice-row { animation: none; }
 }
 
 /* ---------- Why (statement) ---------- */
@@ -917,7 +922,7 @@ section h2 {
   .hero-bg video { display: none; }
   .cue-hint svg { animation: none; }
   .voice-cols { height: auto; mask-image: none; -webkit-mask-image: none; }
-  .deck-card, .panel, .panel-media, .panel-open { transition: none; }
+  .panel, .panel-media, .panel-open { transition: none; }
   html { scroll-behavior: auto; }
 }
 
@@ -940,7 +945,7 @@ section h2 {
   .panel.is-open { height: 330px; flex: none; }
   .panel-tab { bottom: auto; top: 50%; translate: 0 -50%; font-size: 1.05rem; }
   .voice-cols { display: none; }
-  .deck { display: block; }
+  .mobile-voices { display: block; }
   .buildings-split { grid-template-columns: 1fr; }
   .buildings-split img { min-height: 300px; }
 }
@@ -953,8 +958,15 @@ section h2 {
 
 @media (max-width: 640px) {
   .header-row { gap: 0.7rem; }
-  .brand-sub { display: none; }
+  .brand { flex-direction: column; align-items: flex-start; gap: 0; line-height: 1.05; }
+  .site-header .brand-sub { display: block; font-size: 0.88rem; text-transform: none; }
   .btn-header { padding: 0.55rem 0.95rem; }
   .lang-switch button { padding: 0.32rem 0.55rem; }
   .field input, .field textarea { font-size: 16px; }
+}
+
+@media (max-width: 360px) {
+  .header-row { gap: 0.4rem; padding-inline: 12px; }
+  .btn-header { padding-inline: 0.65rem; white-space: nowrap; }
+  .lang-switch button { padding-inline: 0.4rem; }
 }

@@ -77,11 +77,13 @@ height-animated rows under 900px. No auto-advance under prefers-reduced-motion.
 
 ## Testimonials
 Desktop: three columns of cards scrolling vertically at 46s / 58s / 52s, middle one reversed, edges
-masked. Under 900px the columns are replaced by a staggered deck (adapted from the 21st.dev
-stagger-testimonials component): the front card is black with an orange keyline, neighbours sit
-behind it tilted and faded, and arrows or a tap on a side card steps through. Both are rendered in
-JS from `VOICES` in script.js so they follow the language switch. Each card carries a four or five
-star rating in orange, and portraits keep their color.
+masked. This desktop animation is unchanged. Under 900px, two horizontal rows loop in opposite
+directions at 38s / 44s, following the Green Room FX mobile reference. Cards are 258px wide and at
+least 230px tall, with the portrait/name first, quote below and orange stars at the bottom. They
+keep LEVX's square corners and black background. Hover, touch or keyboard focus pauses the rows.
+Reduced motion removes the loops and duplicate cards, with horizontal scrolling available instead.
+Both layouts use `VOICES` in script.js and follow the language switch, including Arabic RTL text.
+
 
 ## Copy rule
 No full stop at the end of any heading, in any language.
@@ -110,3 +112,8 @@ Same mechanism as v1: `I18N` dict in script.js, `data-i18n` / `data-i18n-ph`, lo
 Scroll-scrubbed hero video (rAF loop gated by an IntersectionObserver), scroll reveals
 (IntersectionObserver), accordion via `grid-template-rows 0fr/1fr`, CSS marquee. All gated behind
 prefers-reduced-motion. No scroll listeners.
+
+## Header wordmark
+
+The header uses Gambarino 400 for both LEVX and Ascensores. On phones, the full name stays visible
+on two compact lines; language controls and the call button remain beside it. The footer is unchanged.

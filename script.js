@@ -332,7 +332,7 @@ function stars(n) {
 }
 
 const voiceCols = [...document.querySelectorAll(".voice-col")];
-const deckStage = document.getElementById("deckStage");
+const voiceRows = [...document.querySelectorAll(".voice-row")];
 
 function voiceCard(v, dict, cls) {
   return `
@@ -358,48 +358,14 @@ function renderVoices(dict) {
     col.innerHTML = still ? cards : cards + cards;
     col.style.animationDuration = col.dataset.speed + "s";
   });
-  deckStage.innerHTML = VOICES.map(v => voiceCard(v, dict, "deck-card")).join("");
-  placeDeck();
-}
-
-/* Phone: the same reviews as a staggered deck you can step through */
-const half = Math.floor(VOICES.length / 2);
-let deckAt = 0;
-
-function placeDeck() {
-  const cards = [...deckStage.children];
-  const rtl = document.documentElement.dir === "rtl" ? -1 : 1;
-  cards.forEach((el, i) => {
-    let p = i - deckAt;
-    p = ((p + half) % VOICES.length + VOICES.length) % VOICES.length - half;
-    const near = Math.abs(p) <= 2;
-    const tilt = p === 0 ? 0 : (p % 2 ? 2.5 : -2.5);
-    const lift = p === 0 ? -18 : (p % 2 ? 12 : -12);
-    el.classList.toggle("is-front", p === 0);
-    el.style.zIndex = 10 - Math.abs(p);
-    el.style.opacity = near ? (p === 0 ? 1 : 0.5) : 0;
-    el.style.pointerEvents = near ? "auto" : "none";
-    el.style.transform =
-      `translate(-50%, -50%) translateX(${p * 62 * rtl}%) translateY(${lift}px) ` +
-      `rotate(${tilt}deg) scale(${p === 0 ? 1 : 0.88})`;
+  // ponytail: reuse the review cards; CSS handles the two mobile loops.
+  voiceRows.forEach((row, r) => {
+    const cards = VOICES.filter((_, i) => i % 2 === r)
+      .map(v => voiceCard(v, dict)).join("");
+    row.innerHTML = `<div class="voice-group">${cards}</div>` +
+      (still ? "" : `<div class="voice-group" aria-hidden="true">${cards}</div>`);
   });
 }
-
-function moveDeck(steps) {
-  deckAt = (deckAt + steps + VOICES.length) % VOICES.length;
-  placeDeck();
-}
-
-document.getElementById("deckPrev").addEventListener("click", () => moveDeck(-1));
-document.getElementById("deckNext").addEventListener("click", () => moveDeck(1));
-deckStage.addEventListener("click", e => {
-  const card = e.target.closest(".deck-card");
-  if (!card) return;
-  const i = [...deckStage.children].indexOf(card);
-  let p = i - deckAt;
-  p = ((p + half) % VOICES.length + VOICES.length) % VOICES.length - half;
-  if (p) moveDeck(p);
-});
 
 /* Marquee: duplicate for a seamless loop */
 const mq = document.getElementById("marquee");
