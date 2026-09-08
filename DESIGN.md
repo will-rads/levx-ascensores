@@ -6,7 +6,7 @@ Plain one-page service site. Design direction: gpt-taste-2. Preserve this look u
 
 - Ground `#f4f4f3`, surface white, ink `#0b0b0b`, secondary ink `#5d5d5d`, lines `#e3e3e1`.
 - Buttons and emergency band are black; orange `#d1500f` is for small accents, stars, rules and focus rings. Hero primary button is white.
-- Square corners throughout, including portraits. Thin image outlines. Preserve photos' native colors; service panels change brightness/contrast.
+- Square corners throughout, including navigation, its sliding highlight and portraits. Thin image outlines. Preserve photos' native colors; service panels change brightness/contrast.
 - Gambarino 400: headings, navigation, buttons, stats and header wordmark. Satoshi: body, form/language labels, small panel labels and footer wordmark. Cairo handles Arabic text; the Latin header name stays Gambarino.
 - Full header name on phones, stacked on two lines. Keep language controls and call button beside it; compact spacing below 360px.
 - No eyebrow headings, numbered boxes or final full stops on headings. Keep copy short.
@@ -38,3 +38,5 @@ Services expand from flex 1 to 4 over 600ms and advance every 7 seconds; below 9
 ## Image sources
 
 Levier supplied `doors-wide.jpg` and the maintenance, modernization and installation photos. Repairs, accessibility and retrofit use stock images; building and CTA images are in `img/`. Reviewer portraits are generated and not real customers. Manufacturer PNGs originated from Wikimedia Commons and are grayscale/transparent at low opacity. The email signature keeps the original blue logo branding.
+
+Desktop navigation follows Cedars: centered dark translucent square menu, 250ms sliding orange highlight on hover/focus, active section tracking, reduced-motion support. Mobile navigation remains hidden.

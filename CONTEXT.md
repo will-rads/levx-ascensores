@@ -21,7 +21,7 @@ Run from this folder:
 
 ```powershell
 node --check script.js
-node --test hero.test.cjs reviews.test.cjs
+node --test hero.test.cjs reviews.test.cjs nav.test.cjs
 git diff --check
 ```
 

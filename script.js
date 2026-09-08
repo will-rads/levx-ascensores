@@ -225,6 +225,47 @@ new IntersectionObserver(
   { rootMargin: "-68px 0px 0px 0px", threshold: 0 }
 ).observe(hero);
 
+/* Floating navigation: one sliding highlight shared by hover and keyboard focus. */
+const mainNav = document.querySelector(".main-nav");
+const navLinks = [...mainNav.querySelectorAll("a")];
+const navPill = mainNav.querySelector(".nav-pill");
+let selectedNav = navLinks[0];
+let previewNav = null;
+function positionNavPill() {
+  const link = previewNav || selectedNav;
+  navPill.style.width = link.offsetWidth + "px";
+  navPill.style.transform = `translateX(${link.offsetLeft}px)`;
+  navPill.style.opacity = mainNav.offsetWidth ? 1 : 0;
+  navLinks.forEach(a => a.classList.toggle("is-highlighted", a === link));
+}
+navLinks.forEach(link => {
+  link.addEventListener("pointerenter", () => { previewNav = link; positionNavPill(); });
+  link.addEventListener("focus", () => { previewNav = link; positionNavPill(); });
+  link.addEventListener("click", () => { selectedNav = link; positionNavPill(); });
+});
+mainNav.addEventListener("pointerleave", () => {
+  previewNav = navLinks.includes(document.activeElement) ? document.activeElement : null;
+  positionNavPill();
+});
+mainNav.addEventListener("focusout", e => {
+  previewNav = navLinks.includes(e.relatedTarget) ? e.relatedTarget : null;
+  positionNavPill();
+});
+// ResizeObserver also catches language/font changes and desktop breakpoint entry.
+new ResizeObserver(positionNavPill).observe(mainNav);
+const navSections = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    selectedNav = navLinks.find(link => link.hash === "#" + entry.target.id);
+    navLinks.forEach(link => {
+      if (link === selectedNav) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+    positionNavPill();
+  });
+}, { rootMargin: "-68px 0px -60% 0px" });
+navLinks.forEach(link => navSections.observe(document.querySelector(link.hash)));
+
 /* Hero intro: the video is scrubbed by the scroll, the copy arrives when it ends.
    No scroll listener: a rAF loop runs only while the hero is on screen. */
 const heroVideo = document.getElementById("heroVideo");
