@@ -29,10 +29,29 @@ bigger). Photographs carry a `1px` hairline outline at 10% black, or 10% white o
 card, so they do not bleed into the page. The focus ring never changes an element's own radius.
 
 ## Sections
-Split hero with generated photo · brand logo marquee · expanding service panels ·
+Scroll-scrubbed video intro · brand logo marquee · expanding service panels ·
 drifting testimonial columns · big-statement "why" with 2 columns + process line ·
 full-bleed blue emergency band · full-bleed image break · split contact (channels + form) · footer.
 No eyebrows, no numbered labels, no dashes anywhere.
+
+## Hero intro
+The hero is a 260vh track (220vh under 900px) with a `position: sticky` 100vh stage pinned inside it.
+Scroll position maps to `heroVideo.currentTime`, so the intro plays as you scroll rather than on its
+own. A rAF loop does the seeking and it only runs while an IntersectionObserver says the hero is on
+screen, so there is still no scroll listener anywhere.
+
+While the video runs the only copy on screen is the cue: "Going up" / "Subiendo" / "نصعد" in
+Gambarino, with a small uppercase scroll label and an orange arrow. It fades out between 56% and 82%
+of the track. The real `h1`, lede and buttons fade up between 84% and 100%, and carry `inert` until
+they are more than half visible so they stay out of the tab order.
+
+A scrim over the video keeps the copy readable on every frame, bright marble or dark shaft: a
+left-to-right black gradient (flipped for RTL) plus a short one from the top. Because the hero is
+dark, the copy is white and the primary button inverts to white with black text. The header goes
+transparent with white contents while it sits over the hero (`.site-header.over-hero`).
+
+Under `prefers-reduced-motion` the whole thing is skipped: `.hero.no-scrub` drops the track to normal
+height, hides the cue, shows the copy, and the closing frame stands in as a still background.
 
 ## Service panels
 Six flex panels, `flex: 1` collapsed and `flex: 4` open, 600ms width transition (pattern taken from
@@ -52,7 +71,12 @@ star rating in orange, and portraits keep their color.
 No full stop at the end of any heading, in any language.
 
 ## Images
-Real black and white photography supplied by Levier: `img/hero.jpg` (steel cabin), `img/doors-wide.jpg`
+The hero is video: `img/hero.mp4` (10s, 1600x900, silent, every frame a keyframe so scrubbing is
+smooth), with `img/hero-poster.jpg` as its first frame and `img/hero-still.jpg` (the closing shot) as
+the reduced-motion background. Generated on Higgsfield with Kling 3.0 in `pro` mode from a generated
+wide-lobby start frame.
+
+Real black and white photography supplied by Levier: `img/doors-wide.jpg`
 (closed doors in a marble lobby), and three service panels (maintenance, modernization, installation).
 The three remaining service photos are still generated placeholders, desaturated so the panel row reads
 as one set. Reviewer portraits in `img/people/` stay in color. `img/brands/*.png`: real manufacturer
@@ -65,5 +89,6 @@ Same mechanism as v1: `I18N` dict in script.js, `data-i18n` / `data-i18n-ph`, lo
 `dir=rtl` for AR, phone numbers wrapped `dir="ltr"`. Default flips to Spanish by changing `|| "en"` to `|| "es"`.
 
 ## Motion
-Hero load rise (CSS keyframes), scroll reveals (IntersectionObserver), accordion via
-`grid-template-rows 0fr/1fr`, CSS marquee. All gated behind prefers-reduced-motion. No scroll listeners.
+Scroll-scrubbed hero video (rAF loop gated by an IntersectionObserver), scroll reveals
+(IntersectionObserver), accordion via `grid-template-rows 0fr/1fr`, CSS marquee. All gated behind
+prefers-reduced-motion. No scroll listeners.

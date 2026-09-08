@@ -10,6 +10,10 @@
   Any npm or node command in this environment needs `NODE_OPTIONS=--use-system-ca`.
 - **Browser pane screenshots come out blank** once the page has been scrolled. It is a capture bug,
   the page itself is fine. Verify with the Playwright tools instead.
+- **`python -m http.server` cannot serve video at all.** It does not answer Range requests, so the
+  browser resets the connection on `img/hero.mp4` and the hero looks broken locally while being fine
+  on Vercel. A ~25 line threading server that handles `Range` and returns 206 fixes it. Same handler
+  also cures the reset on larger images.
 - **`python -m http.server` resets the connection** on large images. Every image was converted to a
   JPG of 1600px or less with ffmpeg, which also fixed it. Vercel never had the problem.
 
@@ -21,6 +25,15 @@
   transparent, trimmed, and normalised to a common height.
 - **Orona and Fermator have no usable logo file online.** Mitsubishi Electric and Hitachi took their
   place in the belt. Drawing the missing two by hand is the only other option.
+- **Higgsfield tries to hijack a cinematic prompt with an unrelated preset.** The elevator intro came
+  back as a "preset_recommendation" for a PS1 survival-horror template. Decline it by resending with
+  `declined_preset_id`. The presets are all character and meme effects, none of them are camera moves,
+  so camera direction has to live in the prompt text.
+- **Kling 3.0 in `pro` mode with `sound: "off"`** is the model that took a four-shot list in one
+  prompt and held it. `cinematic_studio_video_v2` also has a real `multi_shots` flag if it is needed.
+- **Scrubbing needs an all-keyframe encode.** `-g 1 -keyint_min 1 -sc_threshold 0` at 1600x900 CRF 32
+  lands at 3.5MB and seeks instantly. A normal encode stutters because every seek decodes forward from
+  the last keyframe.
 - Photos and portraits are generated with Gemini `gemini-3-pro-image-preview` using
   `GEMINI_API_KEY`, `responseModalities: ["IMAGE"]` and an `imageConfig.aspectRatio`.
 
@@ -38,3 +51,6 @@
 
 - **Fontshare only serves one family per URL.** Requesting `f[]=satoshi...&f[]=gambarino@400` in a
   single link silently returns Satoshi alone. Give each family its own `<link>` tag.
+- **A tall sticky hero hides its own failures.** If the video never loads, the pinned stage never
+  changes, so the page looks frozen even though it is scrolling normally. Any scroll-driven hero needs
+  a fallback to a plain static hero when the video is not ready.

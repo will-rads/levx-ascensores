@@ -14,8 +14,10 @@ Plain HTML, CSS and JS. **No build step, no framework, no dependencies.** Four f
 | `script.js` | Translations, service panels, testimonials, contact form |
 | `DESIGN.md` | The design system, read this before changing anything visual |
 
-Images live in `img/` (`services/`, `people/`, `brands/`). Logo concepts are in `logos/`, which is
-gitignored along with `screenshots/`.
+Images live in `img/` (`services/`, `people/`, `brands/`), along with `hero.mp4`, the scroll-driven
+intro. `esignature/index.html` is a separate standalone page: Levier's copy-and-paste email signature.
+Logo concepts are in `logos/`, which is gitignored along with `screenshots/`; the original brand logo
+he sent is `levx-logo-og.png` in the root.
 
 ## Languages
 
