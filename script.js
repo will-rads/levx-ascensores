@@ -240,21 +240,60 @@ if (noMotion) {
     return t * t * (3 - 2 * t);
   };
   let running = false;
-  let at = 0;
+  let frame = 0;
+  let lastSeek = -Infinity;
+  let failed = false;
 
-  function heroFrame() {
-    if (!running) return;
-    const travel = hero.offsetHeight - window.innerHeight;
+  function fallback() {
+    failed = true;
+    cancelAnimationFrame(frame);
+    heroVideo.pause();
+    hero.classList.add("no-scrub");
+    heroCopy.style.opacity = 1;
+    heroCopy.style.translate = "0 0";
+    heroCopy.inert = false;
+    clearTimeout(loadDeadline);
+  }
+
+  // Preload is only a hint on Safari. Briefly prime muted inline playback,
+  // then keep playback paused: scrolling remains the only animation driver.
+  function primeVideo() {
+    if (failed || heroVideo.readyState >= 2) return;
+    heroVideo.muted = true;
+    const play = heroVideo.play();
+    if (play) play.then(() => heroVideo.pause()).catch(() => {});
+  }
+  const loadDeadline = setTimeout(() => {
+    if (heroVideo.readyState < 2) fallback();
+  }, 15000);
+  heroVideo.addEventListener("loadeddata", () => clearTimeout(loadDeadline), { once: true });
+  heroVideo.addEventListener("error", fallback, { once: true });
+  // A real gesture can unlock playback when automatic priming is blocked.
+  window.addEventListener("touchstart", primeVideo, { once: true, passive: true });
+  window.addEventListener("pointerdown", primeVideo, { once: true, passive: true });
+  window.addEventListener("keydown", primeVideo, { once: true });
+  primeVideo();
+
+  function heroFrame(now) {
+    frame = 0;
+    if (!running || failed) return;
+    const stage = hero.querySelector(".hero-stage");
+    const travel = hero.offsetHeight - stage.offsetHeight;
     const p = travel > 0
       ? Math.min(Math.max(-hero.getBoundingClientRect().top / travel, 0), 1)
       : 1;
-
     const dur = heroVideo.duration;
-    if (dur && heroVideo.readyState >= 2) {
+    // One completed seek at a time, at most 24 per second for this 24fps clip.
+    // Metadata is enough to seek; waiting for decoded data can stall Safari.
+    if (Number.isFinite(dur) && dur > 0 && heroVideo.readyState >= 1 &&
+        !heroVideo.seeking && now - lastSeek >= 1000 / 24) {
       const want = p * (dur - 0.06);
-      at += (want - at) * 0.2;
-      if (Math.abs(want - at) < 0.004) at = want;
-      heroVideo.currentTime = at;
+      if (Math.abs(want - heroVideo.currentTime) >= 1 / 48) {
+        try {
+          heroVideo.currentTime = want;
+          lastSeek = now;
+        } catch (_) { fallback(); return; }
+      }
     }
 
     heroCue.style.opacity = 1 - ramp(0.56, 0.82, p);
@@ -262,13 +301,13 @@ if (noMotion) {
     heroCopy.style.opacity = shown;
     heroCopy.style.translate = "0 " + (1 - shown) * 20 + "px";
     heroCopy.inert = shown < 0.5;
-
-    requestAnimationFrame(heroFrame);
+    frame = requestAnimationFrame(heroFrame);
   }
 
   new IntersectionObserver(([e]) => {
     running = e.isIntersecting;
-    if (running) requestAnimationFrame(heroFrame);
+    if (running && !frame && !failed) frame = requestAnimationFrame(heroFrame);
+    if (!running) { cancelAnimationFrame(frame); frame = 0; }
   }).observe(hero);
 }
 

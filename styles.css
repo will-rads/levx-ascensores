@@ -239,7 +239,7 @@ h1, h2 { font-family: var(--font-display); font-weight: 400; text-wrap: balance;
 .hero-copy { opacity: 0; will-change: opacity, translate; }
 .hero.no-scrub { height: auto; }
 .hero.no-scrub .hero-stage { position: static; height: auto; padding: calc(68px + 4rem) 0 4rem; min-height: 88vh; }
-.hero.no-scrub .hero-cue { display: none; }
+.hero.no-scrub .hero-cue, .hero.no-scrub video { display: none; }
 .hero.no-scrub .hero-copy { opacity: 1; }
 
 .hero-bg {
@@ -938,7 +938,8 @@ section h2 {
 @media (max-width: 900px) {
   .main-nav { display: none; }
   .contact-grid { grid-template-columns: 1fr; }
-  .hero { height: 280vh; }
+  .hero { height: 280vh; height: 280svh; }
+  .hero-stage { height: 100vh; height: 100svh; }
   .why-cols { grid-template-columns: 1fr; gap: 1.2rem; }
   .panels { flex-direction: column; height: auto; }
   .panel { height: 96px; flex: none; transition: height 0.6s var(--ease); }

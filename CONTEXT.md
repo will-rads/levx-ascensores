@@ -1,48 +1,32 @@
-# Context
+# LEVX Ascensores
 
-Marketing site for **LEVX Ascensores**, the elevator maintenance and repair company Will's friend
-Levier is starting in Spain. Levier reads Arabic, Will reads English, the customers read Spanish.
+Marketing site for Levier's elevator maintenance/repair company in Spain. Will reviews in English, Levier in Arabic, customers in Spanish.
 
-## Stack
+## Files
 
-Plain HTML, CSS and JS. **No build step, no framework, no dependencies.** Four files do everything:
-
-| File | Holds |
-| --- | --- |
-| `index.html` | All markup, one page |
-| `styles.css` | All styles, design tokens at the top |
-| `script.js` | Translations, service panels, testimonials, contact form |
-| `DESIGN.md` | The design system, read this before changing anything visual |
-
-Images live in `img/` (`services/`, `people/`, `brands/`), along with `hero.mp4`, the scroll-driven
-intro. `esignature/index.html` is a separate standalone page: Levier's copy-and-paste email signature.
-Logo concepts are in `logos/`, which is gitignored along with `screenshots/`; the original brand logo
-he sent is `levx-logo-og.png` in the root.
+- `index.html`, `styles.css`, `script.js`: one-page site, plain HTML/CSS/JS, no build or runtime dependencies.
+- `img/`: video, service images, portraits and manufacturer logos.
+- `esignature/index.html`: separate email signature using the original blue branding.
+- `logos/`: ignored logo concepts; `levx-logo-og.png`: original logo.
+- `AGENTS.md`: working and automatic-push instructions.
+- `DESIGN.md`: visual rules. `MEMORY.md`: current status. `REVIEW-NOTES.md`: content awaiting confirmation. `ERRORS.md`: operational pitfalls.
 
 ## Languages
 
-English loads first, Spanish and Arabic are in the switcher. Text lives in the `I18N` object in
-`script.js`, keyed by the `data-i18n` attributes in the markup. Arabic flips the page to RTL and
-swaps to the Cairo font. Phone numbers are wrapped in `dir="ltr"` so they do not reverse.
+`I18N` in `script.js` maps `data-i18n` / `data-i18n-ph` attributes. English defaults until approval to switch to Spanish. Saved choice: `levx-lang`. Arabic uses RTL/Cairo; phone numbers remain LTR. Change the final language fallback to `es` when approved.
 
-To make Spanish the default later, change `|| "en"` to `|| "es"` at the bottom of `script.js`.
+## Checks and deployment
 
-## Running it
+Run from this folder:
 
-```bash
-python -m http.server 8642 --directory family-friends/levier-elevator
+```powershell
+node --check script.js
+node --test hero.test.cjs reviews.test.cjs
+git diff --check
 ```
 
-There is also a `levx` entry in `Me/.claude/launch.json` for the Browser pane.
+Use a local server with HTTP Range/206 support for video testing. Python's basic HTTP server is suitable for layout checks, not reliable seek validation.
 
-## Deploying
+[Repository](https://github.com/will-rads/levx-ascensores) | [Live site](https://levx-ascensores.vercel.app/)
 
-Repo [will-rads/levx-ascensores](https://github.com/will-rads/levx-ascensores), live at
-<https://levx-ascensores.vercel.app>. Vercel is connected to GitHub, so **a push to `main` deploys
-itself**. A deploy takes well under a minute.
-
-## Still placeholder
-
-Phone, email, cities and all photography are invented. The full list of what Levier has to replace
-is in `REVIEW-NOTES.md` (parts of that file describe an older version of the layout, trust this file
-and `DESIGN.md` where they disagree).
+Push to `main` to deploy automatically. Use the `will-rads` account; see `ERRORS.md` if Git selects NamouProperties.
