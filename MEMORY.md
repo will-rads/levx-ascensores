@@ -4,12 +4,11 @@ Updated 8 September 2026.
 
 - Mobile reviews: two opposing horizontal rows. Desktop retains three vertical animated columns.
 - Header: Gambarino, full LEVX Ascensores name on phones. Desktop has a centered square translucent menu with a sliding orange highlight.
-- Hero: existing MP4 on desktop and phones; serialized seeks, muted loading priming, stable mobile height and static fallback. Local desktop/phone-size browser checks and five tests passed.
-- Actual MacBook Air Safari/Chrome retest is still needed. The reported freeze was not reproduced on that hardware; do not describe the cause as proven. Reduce Motion deliberately selects a static hero.
-- Reduced-motion visitors can enable animations for LEVX using the localized corner button; the choice persists, with an option to reduce motion again. Safari video permissions remain separate.
+- Hero: existing MP4 on desktop and phones; serialized seeks, muted loading priming, stable mobile height and static fallback. Local browser checks passed.
+- M1 MacBook Air: user reports animations worked after disabling macOS Reduce Motion. Browser/version coverage and the site override on that Mac remain unverified.
+- Reduced-motion visitors see Enable animations at bottom right (bottom left in Arabic). It saves a LEVX-only override; the button is hidden when motion is already enabled and no choice is saved.
 - Automatic commit/push after necessary changes is authorized in `AGENTS.md`.
-
-- Email signature v2: black/white, orange accents, Gambarino name artwork and elevator-arrival GIF. Original logo and v1 retained in `esignature/`.
+- Email signature v2 is live: black/white, orange accents, Gambarino name artwork and elevator-arrival GIF. Original logo and v1 retained in `esignature/`; received-email testing remains outstanding.
 
 ## Next
 

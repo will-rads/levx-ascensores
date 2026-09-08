@@ -9,6 +9,7 @@ Plain one-page service site. Design direction: gpt-taste-2. Preserve this look u
 - Square corners throughout, including navigation, its sliding highlight and portraits. Thin image outlines. Preserve photos' native colors; service panels change brightness/contrast.
 - Gambarino 400: headings, navigation, buttons, stats and header wordmark. Satoshi: body, form/language labels, small panel labels and footer wordmark. Cairo handles Arabic text; the Latin header name stays Gambarino.
 - Full header name on phones, stacked on two lines. Keep language controls and call button beside it; compact spacing below 360px.
+- Desktop navigation follows Cedars: centered dark translucent square menu, 250ms sliding orange highlight on hover/focus and active section tracking. Hidden on phones.
 - No eyebrow headings, numbered boxes or final full stops on headings. Keep copy short.
 
 ## Page order
@@ -39,8 +40,6 @@ Services expand from flex 1 to 4 over 600ms and advance every 7 seconds; below 9
 
 Levier supplied `doors-wide.jpg` and the maintenance, modernization and installation photos. Repairs, accessibility and retrofit use stock images; building and CTA images are in `img/`. Reviewer portraits are generated and not real customers. Manufacturer PNGs originated from Wikimedia Commons and are grayscale/transparent at low opacity. The email signature follows black/white and orange styling, with Gambarino name artwork and an elevator-arrival GIF. Only the original logo keeps its blue colors.
 
-Desktop navigation follows Cedars: centered dark translucent square menu, 250ms sliding orange highlight on hover/focus, active section tracking, reduced-motion support. Mobile navigation remains hidden.
-
 ## Motion preference
 
-`motion.js` runs before CSS and sets `data-motion` from the system preference or a saved site override. A square bottom-corner EN/ES/AR button appears for reduced-motion visitors and anyone with a saved choice. It enables or reduces all site animations, remembers `levx-motion` locally and reloads to apply. History state preserves the current visit if storage is blocked. Computer settings are unchanged; Safari media permission is separate.
+`motion.js` runs before CSS and sets `data-motion` from the system preference or a saved site override. Enable/Reduce animations appears only for reduced-motion visitors or a saved choice: bottom right in EN/ES, bottom left in AR. It saves `levx-motion` and reloads; history state preserves the visit if storage is blocked. All motion follows this preference. Computer settings and Safari media permissions are unchanged.
