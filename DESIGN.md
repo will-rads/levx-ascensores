@@ -37,7 +37,7 @@ Services expand from flex 1 to 4 over 600ms and advance every 7 seconds; below 9
 
 ## Image sources
 
-Levier supplied `doors-wide.jpg` and the maintenance, modernization and installation photos. Repairs, accessibility and retrofit use stock images; building and CTA images are in `img/`. Reviewer portraits are generated and not real customers. Manufacturer PNGs originated from Wikimedia Commons and are grayscale/transparent at low opacity. The email signature keeps the original blue logo branding.
+Levier supplied `doors-wide.jpg` and the maintenance, modernization and installation photos. Repairs, accessibility and retrofit use stock images; building and CTA images are in `img/`. Reviewer portraits are generated and not real customers. Manufacturer PNGs originated from Wikimedia Commons and are grayscale/transparent at low opacity. The email signature follows black/white and orange styling, with Gambarino name artwork and an elevator-arrival GIF. Only the original logo keeps its blue colors.
 
 Desktop navigation follows Cedars: centered dark translucent square menu, 250ms sliding orange highlight on hover/focus, active section tracking, reduced-motion support. Mobile navigation remains hidden.
 

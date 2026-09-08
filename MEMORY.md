@@ -9,6 +9,8 @@ Updated 8 September 2026.
 - Reduced-motion visitors can enable animations for LEVX using the localized corner button; the choice persists, with an option to reduce motion again. Safari video permissions remain separate.
 - Automatic commit/push after necessary changes is authorized in `AGENTS.md`.
 
+- Email signature v2: black/white, orange accents, Gambarino name artwork and elevator-arrival GIF. Original logo and v1 retained in `esignature/`.
+
 ## Next
 
 Levier reviews the site in Arabic, confirms the content in `REVIEW-NOTES.md`, chooses a logo and confirms his signature details. Switch the default to Spanish after approval and update site/signature URLs when the real domain exists.

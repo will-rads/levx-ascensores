@@ -7,7 +7,7 @@ Marketing site for Levier's elevator maintenance/repair company in Spain. Will r
 - `index.html`, `styles.css`, `script.js`: one-page site, plain HTML/CSS/JS, no build or runtime dependencies.
 - `motion.js`: early site motion preference, shared by CSS and interactions.
 - `img/`: video, service images, portraits and manufacturer logos.
-- `esignature/index.html`: separate email signature using the original blue branding.
+- `esignature/index.html`: separate animated email signature matching website styling; original blue logo retained.
 - `logos/`: ignored logo concepts; `levx-logo-og.png`: original logo.
 - `AGENTS.md`: working and automatic-push instructions.
 - `DESIGN.md`: visual rules. `MEMORY.md`: current status. `REVIEW-NOTES.md`: content awaiting confirmation. `ERRORS.md`: operational pitfalls.
