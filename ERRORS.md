@@ -10,6 +10,10 @@ git -c credential.helper= -c credential.helper=manager -c credential.username=wi
 
 The personal CLI wrapper is `../../.codex-tools/github-cli/Invoke-GhWillRads.ps1`. Never print credential values. A sandbox credential error may require running the authorized push outside the sandbox.
 
+## Domain DNS
+
+Hostinger rejected converting the old root ALIAS directly to A. Replacing it resolved the conflict; DNS history has restore points. Preserve mail records and nameservers. Because root redirects to www, a pending www certificate can block both addresses. Both certificates subsequently completed; do not bypass certificate warnings.
+
 ## Video and browser checks
 
 - The live MP4 supports HTTP Range requests (206 verified). A basic Python server does not provide equivalent seek behavior.

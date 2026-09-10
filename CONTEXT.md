@@ -28,6 +28,13 @@ git diff --check
 
 Use a local server with HTTP Range/206 support for video testing. Python's basic HTTP server is suitable for layout checks, not reliable seek validation.
 
-[Repository](https://github.com/will-rads/levx-ascensores) | [Live site](https://levx-ascensores.vercel.app/)
+[Repository](https://github.com/will-rads/levx-ascensores) | [Live site](https://www.levxascensores.es/) | [Vercel fallback](https://levx-ascensores.vercel.app/)
+
+Vercel project: `will-namou/levx-ascensores`. `levxascensores.es` redirects to `www.levxascensores.es` (308). Hostinger manages DNS using `ns1.dns-parking.com` / `ns2.dns-parking.com`; email records remain unchanged.
+
+| Type | Name | Value | TTL |
+|---|---|---|---|
+| A | `@` | `216.198.79.1` | 300 |
+| CNAME | `www` | `b669c54bc299f8be.vercel-dns-017.com` | 300 |
 
 Push to `main` to deploy automatically. Use the `will-rads` account; see `ERRORS.md` if Git selects NamouProperties.

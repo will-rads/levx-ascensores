@@ -1,6 +1,8 @@
 # Current state
 
-Updated 8 September 2026.
+Updated 10 September 2026.
+
+- Custom domain live: both domains showed Valid Configuration in Vercel; user confirmed the site loads. Root redirects to `www.levxascensores.es`. DNS details are in `CONTEXT.md`.
 
 - Mobile reviews: two opposing horizontal rows. Desktop retains three vertical animated columns.
 - Header: Gambarino, full LEVX Ascensores name on phones. Desktop has a centered square translucent menu with a sliding orange highlight.
@@ -12,7 +14,7 @@ Updated 8 September 2026.
 
 ## Next
 
-Levier reviews the site in Arabic, confirms the content in `REVIEW-NOTES.md`, chooses a logo and confirms his signature details. Switch the default to Spanish after approval and update site/signature URLs when the real domain exists.
+Levier reviews the site in Arabic, confirms the content in `REVIEW-NOTES.md`, chooses a logo and confirms his signature details. Switch the default to Spanish after approval. Update remaining hardcoded site/signature URLs to the live domain; DNS setup did not change source files.
 
 ## Keep
 
