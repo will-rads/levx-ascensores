@@ -59,9 +59,16 @@ def web(d, b):
     d.line((b * .27, b * .50, b * .73, b * .50), fill=W, width=lw)
 
 
+def linkedin(d, b):
+    from PIL import ImageFont
+    f = ImageFont.truetype("C:/Windows/Fonts/arialbd.ttf", int(b * 0.42))
+    d.text((b * .5, b * .53), "in", font=f, fill=W, anchor="mm")
+
+
 if __name__ == "__main__":
     portrait(sys.argv[1])
     icon("phone", phone)
     icon("mail", mail)
     icon("web", web)
+    icon("linkedin", linkedin)
     print("built", sorted(p.name for p in OUT.glob("*.png")))

@@ -28,24 +28,24 @@ h1 { margin: 0 0 6px; font: 400 30px Gambarino, Georgia, serif; }
 
   <div class="sigbox"><div id="sig">
 <!-- Email-safe: tables, inline styles, absolute PNG URLs. No SVG, no web fonts required. -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" bgcolor="#f2f2f1" style="border-collapse:collapse;width:600px;background-color:#f2f2f1;font-family:Arial,Helvetica,sans-serif;color:#0b0b0b;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="640" bgcolor="#f2f2f1" style="border-collapse:collapse;width:640px;background-color:#f2f2f1;font-family:Arial,Helvetica,sans-serif;color:#0b0b0b;">
   <tr>
     <td width="40" style="width:40px;font-size:0;line-height:0;">&nbsp;</td>
     <td width="136" valign="top" align="center" style="width:136px;padding:0 0 18px;">
       <div style="width:76px;height:64px;background-color:#0b0b0b;font-size:0;line-height:0;margin:0 auto;">&nbsp;</div>
-      <img src="https://www.levxascensores.es/esignature/assets/levier-photo.png" width="136" height="136" alt="Levier" style="display:block;width:136px;height:136px;border:0;margin:-44px auto 0;">
+      <img src="https://www.levxascensores.es/esignature/assets/levier-photo.png" width="136" height="136" alt="Levier Oraha" style="display:block;width:136px;height:136px;border:0;margin:-44px auto 0;">
       <div style="margin-top:12px;font:700 13px/1 Arial,Helvetica,sans-serif;letter-spacing:3px;color:#0b0b0b;">LEVX</div>
       <div style="margin-top:4px;font:400 8px/1 Arial,Helvetica,sans-serif;letter-spacing:3px;color:#5d5d5d;">ASCENSORES</div>
     </td>
     <td width="28" style="width:28px;font-size:0;line-height:0;">&nbsp;</td>
     <td valign="middle" style="padding:30px 0 18px;">
       <div style="font:400 12px/1 Arial,Helvetica,sans-serif;letter-spacing:2px;color:#5d5d5d;white-space:nowrap;">LEVX ASCENSORES</div>
-      <div style="margin-top:8px;font:700 34px/1 Georgia,'Times New Roman',serif;color:#0b0b0b;">Levier</div>
+      <div style="margin-top:8px;font:700 24px/1 Georgia,'Times New Roman',serif;letter-spacing:1px;color:#0b0b0b;white-space:nowrap;">LEVIER ORAHA</div>
       <div style="margin-top:8px;font:400 15px/1.2 Arial,Helvetica,sans-serif;color:#0b0b0b;">Founder</div>
       <div style="margin-top:12px;width:44px;height:2px;background-color:#d1500f;font-size:0;line-height:0;">&nbsp;</div>
     </td>
     <td width="24" style="width:24px;font-size:0;line-height:0;">&nbsp;</td>
-    <td width="1" style="padding:42px 0 30px;"><div style="width:1px;height:96px;background-color:#0b0b0b;font-size:0;line-height:0;">&nbsp;</div></td>
+    <td width="1" style="padding:42px 0 30px;"><div style="width:1px;height:118px;background-color:#0b0b0b;font-size:0;line-height:0;">&nbsp;</div></td>
     <td width="24" style="width:24px;font-size:0;line-height:0;">&nbsp;</td>
     <td valign="middle" style="padding:30px 32px 18px 0;">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font:400 14px/1.2 Arial,Helvetica,sans-serif;">
@@ -58,8 +58,12 @@ h1 { margin: 0 0 6px; font: 400 30px Gambarino, Georgia, serif; }
           <td style="padding:0 0 10px;white-space:nowrap;"><a href="mailto:levier@levxascensores.es" style="color:#0b0b0b;text-decoration:none;">levier@levxascensores.es</a></td>
         </tr>
         <tr>
-          <td style="padding:0 10px 0 0;"><img src="https://www.levxascensores.es/esignature/assets/icon-web.png" width="18" height="18" alt="Website" style="display:block;border:0;"></td>
-          <td style="white-space:nowrap;"><a href="https://levxascensores.es/" style="color:#0b0b0b;text-decoration:none;">levxascensores.es</a></td>
+          <td style="padding:0 10px 10px 0;"><img src="https://www.levxascensores.es/esignature/assets/icon-web.png" width="18" height="18" alt="Website" style="display:block;border:0;"></td>
+          <td style="padding:0 0 10px;white-space:nowrap;"><a href="https://levxascensores.es/" style="color:#0b0b0b;text-decoration:none;">levxascensores.es</a></td>
+        </tr>
+        <tr>
+          <td style="padding:0 10px 0 0;"><img src="https://www.levxascensores.es/esignature/assets/icon-linkedin.png" width="18" height="18" alt="LinkedIn" style="display:block;border:0;"></td>
+          <td style="white-space:nowrap;"><a href="https://www.linkedin.com/in/egr-levier-oraha-553429235/" style="color:#0b0b0b;text-decoration:none;">LinkedIn</a></td>
         </tr>
       </table>
     </td>
@@ -76,7 +80,7 @@ document.getElementById('copyButton').addEventListener('click', async () => {
   try {
     await navigator.clipboard.write([new ClipboardItem({
       'text/html': new Blob([sig.innerHTML], {type: 'text/html'}),
-      'text/plain': new Blob(['Levier | Founder, LEVX Ascensores\n+34 617 50 96 16\nlevier@levxascensores.es\nlevxascensores.es'], {type: 'text/plain'})
+      'text/plain': new Blob(['LEVIER ORAHA | Founder, LEVX Ascensores\n+34 617 50 96 16\nlevier@levxascensores.es\nlevxascensores.es\nlinkedin.com/in/egr-levier-oraha-553429235'], {type: 'text/plain'})
     })]);
     status.textContent = 'Copied. Paste into your Gmail signature and save.';
   } catch (_) {
