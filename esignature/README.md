@@ -2,6 +2,7 @@
 
 - `index.html`: current black/white signature with orange accents and elevator GIF.
 - `index-v1.html`: preserved original blue version.
+- `photo.html`: portrait signature (round B&W photo, name, phone, email, site). Real contact details from Levier. Artwork built by `build-photo.py <portrait.png>`.
 - `assets/original-logo.png`: exact original embedded logo; intentionally unchanged.
 - `assets/elevator-arrival.gif`: 6-second loop, 520×100 display size, about 22 KB. First frame is a complete still.
 - `assets/levier-name.png`: Gambarino artwork, preserving the name font in email clients.
