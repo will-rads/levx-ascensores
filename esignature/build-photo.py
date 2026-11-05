@@ -11,7 +11,7 @@ INK = (11, 11, 11)
 S = 4  # supersample, then shrink for smooth edges
 
 
-def portrait(src, color=False, name="levier-photo.png", d=84, tab=(46, 40), ring=3):
+def portrait(src, color=False, name="levier-photo.png", d=84, tab=None, ring=3):
     """Round portrait with the black tab baked in, so no email app can pull them apart.
     Saved at 2x: display size is d wide, d + tab overlap tall."""
     k = 2 * S
@@ -21,12 +21,13 @@ def portrait(src, color=False, name="levier-photo.png", d=84, tab=(46, 40), ring
     w, h = im.size
     side = min(w, h)
     im = im.crop(((w - side) // 2, 0, (w + side) // 2, side))
-    top = tab[1] // 2                      # circle starts halfway down the tab
+    top = tab[1] // 2 if tab else 0        # circle starts halfway down the tab, if there is one
     W, H = d * k, (d + top) * k
     canvas = Image.new("RGB", (W, H), BG)
     dr = ImageDraw.Draw(canvas)
-    tx = (W - tab[0] * k) // 2
-    dr.rectangle((tx, 0, tx + tab[0] * k, tab[1] * k), fill=INK)
+    if tab:
+        tx = (W - tab[0] * k) // 2
+        dr.rectangle((tx, 0, tx + tab[0] * k, tab[1] * k), fill=INK)
     dr.ellipse((0, top * k, W - 1, H - 1), fill=(255, 255, 255))
     inner = W - 2 * ring * k
     im = im.resize((inner, inner), Image.LANCZOS)
