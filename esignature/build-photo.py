@@ -11,8 +11,10 @@ INK = (11, 11, 11)
 S = 4  # supersample, then shrink for smooth edges
 
 
-def portrait(src, px=272, ring=8):
-    im = ImageOps.grayscale(Image.open(src)).convert("RGB")
+def portrait(src, px=272, ring=8, color=False, name="levier-photo.png"):
+    im = Image.open(src).convert("RGB")
+    if not color:
+        im = ImageOps.grayscale(im).convert("RGB")
     w, h = im.size
     side = min(w, h)
     im = im.crop(((w - side) // 2, 0, (w + side) // 2, side))  # keep the top, it holds the face
@@ -24,7 +26,7 @@ def portrait(src, px=272, ring=8):
     mask = Image.new("L", im.size, 0)
     ImageDraw.Draw(mask).ellipse((0, 0, im.size[0] - 1, im.size[1] - 1), fill=255)
     canvas.paste(im, (ring * S, ring * S), mask)
-    canvas.resize((px, px), Image.LANCZOS).save(OUT / "levier-photo.png", optimize=True)
+    canvas.resize((px, px), Image.LANCZOS).save(OUT / name, optimize=True)
 
 
 def icon(name, draw_fn, px=36):
@@ -67,6 +69,7 @@ def linkedin(d, b):
 
 if __name__ == "__main__":
     portrait(sys.argv[1])
+    portrait(sys.argv[1], color=True, name="levier-photo-color.png")
     icon("phone", phone)
     icon("mail", mail)
     icon("web", web)
