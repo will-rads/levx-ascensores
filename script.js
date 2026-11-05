@@ -507,7 +507,7 @@ document.getElementById("contactForm").addEventListener("submit", e => {
   const body = encodeURIComponent(
     "Name: " + f.name.value + "\nPhone: " + f.phone.value + "\n\n" + f.message.value
   );
-  location.href = "mailto:info@levx-ascensores.es?subject=" + subject + "&body=" + body;
+  location.href = "mailto:levier@levxascensores.es?subject=" + subject + "&body=" + body;
 });
 
 /* Start in the saved language (defaults to English) */

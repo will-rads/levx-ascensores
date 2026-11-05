@@ -789,6 +789,17 @@ html[data-motion="off"] .voice-row { animation: none; }
 
 .site-footer .copy { color: var(--ink-2); flex-basis: 100%; }
 
+.footer-contact {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.6rem;
+  font-style: normal;
+}
+
+.footer-contact a { color: var(--ink); text-decoration: none; transition: color 0.2s; }
+.footer-contact a:hover { color: var(--spark); }
+
 /* ---------- Stats ---------- */
 
 .stats { background: var(--bg); border-bottom: 1px solid var(--line); }
