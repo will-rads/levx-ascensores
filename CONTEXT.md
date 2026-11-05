@@ -7,7 +7,8 @@ Marketing site for Levier's elevator maintenance/repair company in Spain. Will r
 - `index.html`, `styles.css`, `script.js`: one-page site, plain HTML/CSS/JS, no build or runtime dependencies.
 - `motion.js`: early site motion preference, shared by CSS and interactions.
 - `img/`: video, service images, portraits and manufacturer logos.
-- `esignature/index.html`: separate animated email signature matching website styling; original blue logo retained.
+- `esignature/photo.html`: **current** email signature, round portrait (black and white and colour versions), real contacts. `esignature/index.html` is the older GIF version.
+- `serve.py`: local server with Range support, so the hero video plays locally. Run `python serve.py` (port 8643); also the `levx` entry in `Me/.claude/launch.json`.
 - `logos/`: ignored logo concepts; `levx-logo-og.png`: original logo.
 - `AGENTS.md`: working and automatic-push instructions.
 - `DESIGN.md`: visual rules. `MEMORY.md`: current status. `REVIEW-NOTES.md`: content awaiting confirmation. `ERRORS.md`: operational pitfalls.
@@ -26,7 +27,7 @@ node --test hero.test.cjs reviews.test.cjs nav.test.cjs motion.test.cjs
 git diff --check
 ```
 
-Use a local server with HTTP Range/206 support for video testing. Python's basic HTTP server is suitable for layout checks, not reliable seek validation.
+Use `python serve.py` for local testing. Python's basic HTTP server cannot serve the video.
 
 [Repository](https://github.com/will-rads/levx-ascensores) | [Live site](https://www.levxascensores.es/) | [Vercel fallback](https://levx-ascensores.vercel.app/)
 

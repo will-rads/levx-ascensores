@@ -1,15 +1,14 @@
 # Email signature
 
-- `index.html`: current black/white signature with orange accents and elevator GIF.
-- `index-v1.html`: preserved original blue version.
-- `photo.html`: portrait signature (round B&W photo, name, phone, email, site). Real contact details from Levier. Artwork built by `build-photo.py <portrait.png>`.
-- `assets/original-logo.png`: exact original embedded logo; intentionally unchanged.
-- `assets/elevator-arrival.gif`: 6-second loop, 520×100 display size, about 22 KB. First frame is a complete still.
-- `assets/levier-name.png`: Gambarino artwork, preserving the name font in email clients.
+**In use: `photo.html`** (live at `https://www.levxascensores.es/esignature/photo.html`). Two versions on one page, black and white and colour portrait, each with its own Copy button. Levier copies on a computer and pastes into Gmail web; the Gmail phone app only takes plain text.
 
-Copy from the live `/esignature/` page. Image URLs are absolute HTTPS URLs; contact links remain editable text. Gambarino is used where available, with Georgia fallback for live text. Email client settings may stop GIF animation; test a received email in the intended clients. No account signature settings were changed automatically.
+- `photo.html`: white, content-width, round portrait, LEVIER ORAHA, Founder, phone, email, site, LinkedIn. Icons sit inline with the text (Gmail splits separate icon cells when pasted). No SVG, no web fonts, no negative margins.
+- `build-photo.py`: rebuilds `assets/levier-photo.png`, `assets/levier-photo-color.png` and the `icon-*.png` files. Run `python build-photo.py source/levier-portrait.png`.
+- `source/levier-portrait.png`: the original portrait Levier supplied.
+- Image URLs end in `?v=N`. Bump N after rebuilding artwork, or Gmail keeps showing its cached copy.
 
-Name, title and contact details are retained from v1 and still need Levier's confirmation. The live domain is now `www.levxascensores.es`; the signature's hardcoded Vercel links have not yet been updated.
+Older, not in use:
 
-Rebuild artwork with Pillow and a local Gambarino font from Fontshare:
-`python build-assets.py /path/to/Gambarino.ttf`
+- `index.html`: black and white signature with the elevator GIF and Gambarino name artwork (`build-assets.py`).
+- `index-v1.html`: original blue version.
+- `assets/original-logo.png`, `assets/elevator-arrival.gif`, `assets/levier-name.png`: artwork for those two.
