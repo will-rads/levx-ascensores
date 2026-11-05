@@ -6,30 +6,39 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageOps
 
 OUT = Path(__file__).parent / "assets"
-BG = (242, 242, 241)
+BG = (255, 255, 255)
 INK = (11, 11, 11)
 S = 4  # supersample, then shrink for smooth edges
 
 
-def portrait(src, px=272, ring=8, color=False, name="levier-photo.png"):
+def portrait(src, color=False, name="levier-photo.png", d=84, tab=(46, 40), ring=3):
+    """Round portrait with the black tab baked in, so no email app can pull them apart.
+    Saved at 2x: display size is d wide, d + tab overlap tall."""
+    k = 2 * S
     im = Image.open(src).convert("RGB")
     if not color:
         im = ImageOps.grayscale(im).convert("RGB")
     w, h = im.size
     side = min(w, h)
-    im = im.crop(((w - side) // 2, 0, (w + side) // 2, side))  # keep the top, it holds the face
-    big = px * S
-    im = im.resize((big - 2 * ring * S,) * 2, Image.LANCZOS)
-    canvas = Image.new("RGB", (big, big), BG)
-    d = ImageDraw.Draw(canvas)
-    d.ellipse((0, 0, big - 1, big - 1), fill=(255, 255, 255))  # white ring
+    im = im.crop(((w - side) // 2, 0, (w + side) // 2, side))
+    top = tab[1] // 2                      # circle starts halfway down the tab
+    W, H = d * k, (d + top) * k
+    canvas = Image.new("RGB", (W, H), BG)
+    dr = ImageDraw.Draw(canvas)
+    tx = (W - tab[0] * k) // 2
+    dr.rectangle((tx, 0, tx + tab[0] * k, tab[1] * k), fill=INK)
+    dr.ellipse((0, top * k, W - 1, H - 1), fill=(255, 255, 255))
+    inner = W - 2 * ring * k
+    im = im.resize((inner, inner), Image.LANCZOS)
     mask = Image.new("L", im.size, 0)
-    ImageDraw.Draw(mask).ellipse((0, 0, im.size[0] - 1, im.size[1] - 1), fill=255)
-    canvas.paste(im, (ring * S, ring * S), mask)
-    canvas.resize((px, px), Image.LANCZOS).save(OUT / name, optimize=True)
+    ImageDraw.Draw(mask).ellipse((0, 0, inner - 1, inner - 1), fill=255)
+    # thin grey ring so the white border still reads on a white email
+    dr.ellipse((0, top * k, W - 1, H - 1), outline=(220, 220, 218), width=k)
+    canvas.paste(im, (ring * k, top * k + ring * k), mask)
+    canvas.resize((W // S, H // S), Image.LANCZOS).save(OUT / name, optimize=True)
 
 
-def icon(name, draw_fn, px=36):
+def icon(name, draw_fn, px=28):
     big = px * S
     im = Image.new("RGB", (big, big), BG)
     d = ImageDraw.Draw(im)
