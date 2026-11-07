@@ -40,6 +40,7 @@ h1 { margin: 0 0 6px; font: 400 30px Gambarino, Georgia, serif; }
       <div style="font:400 8px/1 Arial,Helvetica,sans-serif;letter-spacing:1.5px;color:#5d5d5d;white-space:nowrap;">LEVX ASCENSORES</div>
       <div style="margin-top:5px;font:700 15px/1 Georgia,'Times New Roman',serif;letter-spacing:0.5px;color:#0b0b0b;white-space:nowrap;">LEVIER ORAHA</div>
       <div style="margin-top:4px;font:400 10px/1.2 Arial,Helvetica,sans-serif;color:#0b0b0b;">Founder</div>
+      <div style="margin-top:3px;font:400 9px/1.3 Arial,Helvetica,sans-serif;color:#5d5d5d;white-space:nowrap;"><a href="https://www.fempa.es/certmetal" target="_blank" style="text-decoration:none;color:#5d5d5d;">Conservador de Ascensores certificado &middot; CERTMETAL (ENAC) &middot; N&ordm; A20026/41_02</a></div>
       <div style="margin-top:6px;width:24px;height:2px;background-color:#d1500f;font-size:0;line-height:0;">&nbsp;</div>
     </td>
   </tr>
@@ -74,6 +75,7 @@ h1 { margin: 0 0 6px; font: 400 30px Gambarino, Georgia, serif; }
       <div style="font:400 8px/1 Arial,Helvetica,sans-serif;letter-spacing:1.5px;color:#5d5d5d;white-space:nowrap;">LEVX ASCENSORES</div>
       <div style="margin-top:5px;font:700 15px/1 Georgia,'Times New Roman',serif;letter-spacing:0.5px;color:#0b0b0b;white-space:nowrap;">LEVIER ORAHA</div>
       <div style="margin-top:4px;font:400 10px/1.2 Arial,Helvetica,sans-serif;color:#0b0b0b;">Founder</div>
+      <div style="margin-top:3px;font:400 9px/1.3 Arial,Helvetica,sans-serif;color:#5d5d5d;white-space:nowrap;"><a href="https://www.fempa.es/certmetal" target="_blank" style="text-decoration:none;color:#5d5d5d;">Conservador de Ascensores certificado &middot; CERTMETAL (ENAC) &middot; N&ordm; A20026/41_02</a></div>
       <div style="margin-top:6px;width:24px;height:2px;background-color:#d1500f;font-size:0;line-height:0;">&nbsp;</div>
     </td>
   </tr>
@@ -102,7 +104,7 @@ document.querySelectorAll('[data-sig]').forEach(b => b.addEventListener('click',
   try {
     await navigator.clipboard.write([new ClipboardItem({
       'text/html': new Blob([sig.innerHTML], {type: 'text/html'}),
-      'text/plain': new Blob(['LEVIER ORAHA | Founder, LEVX Ascensores\n+34 617 50 96 16\nlevier@levxascensores.es\nlevxascensores.es\nlinkedin.com/in/egr-levier-oraha-553429235'], {type: 'text/plain'})
+      'text/plain': new Blob(['LEVIER ORAHA | Founder, LEVX Ascensores\nConservador de Ascensores certificado, CERTMETAL (ENAC), N. A20026/41_02\n+34 617 50 96 16\nlevier@levxascensores.es\nlevxascensores.es\nlinkedin.com/in/egr-levier-oraha-553429235'], {type: 'text/plain'})
     })]);
     status.textContent = 'Copied. Paste into your Gmail signature and save.';
   } catch (_) {
