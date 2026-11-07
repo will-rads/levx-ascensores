@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>LEVX logo concepts</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=gambarino@400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f4f4f3; --surface:#fff; --ink:#0b0b0b; --ink-2:#5d5d5d; --line:#e3e3e1; --spark:#d1500f; }
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: "Satoshi", system-ui, sans-serif; background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; padding: clamp(24px, 5vw, 64px) 16px 80px; }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  h1 { font-family: "Gambarino", Georgia, serif; font-weight: 400; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.05; }
+  .lede { color: var(--ink-2); margin-top: .6rem; max-width: 52ch; }
+  .concept { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 28px; }
+  .concept header { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 20px; }
+  .concept h2 { font-family: "Gambarino", Georgia, serif; font-weight: 400; font-size: 1.8rem; }
+  .concept header p { color: var(--ink-2); font-size: .95rem; }
+  .boards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .board { aspect-ratio: 16 / 9; display: grid; place-items: center; background: var(--surface); }
+  .board.dark { background: var(--ink); color: #fff; }
+  .lockup { display: flex; align-items: center; gap: clamp(12px, 2vw, 20px); }
+  .lockup svg { width: clamp(48px, 7vw, 76px); height: auto; flex: none; }
+  .word { line-height: 1; }
+  .word b { display: block; font-family: "Gambarino", Georgia, serif; font-weight: 400; font-size: clamp(2.4rem, 6vw, 4rem); letter-spacing: .02em; }
+  .word span { display: block; margin-top: .45em; font-size: clamp(.62rem, 1.1vw, .8rem); font-weight: 500; letter-spacing: .42em; text-transform: uppercase; color: var(--ink-2); }
+  .dark .word span { color: #b9b9b7; }
+  .dark .lockup svg { outline: 1px solid #3a3a3a; }
+  .row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 12px; margin-top: 12px; }
+  .tab { background: #dedede; padding: 10px 10px 0; }
+  .tab div { display: inline-flex; align-items: center; gap: 8px; background: #fff; padding: 8px 14px; font-size: 13px; }
+  .tab svg { width: 16px; height: 16px; }
+  .tab + .bar { background: #fff; height: 30px; }
+  .sizes { background: var(--surface); display: flex; align-items: end; justify-content: center; gap: 22px; padding: 22px; }
+  .sizes figure { text-align: center; font-size: 11px; color: var(--ink-2); }
+  .sizes figcaption { margin-top: 6px; }
+  .phone { width: 64px; height: 64px; border-radius: 14px; overflow: hidden; display: block; }
+  .phone svg { width: 100%; height: 100%; }
+  @media (max-width: 720px) { .boards, .row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>LEVX logo concepts</h1>
+  <p class="lede">Three directions in the site's own black, white and orange, with the Gambarino wordmark. Each shows the full logo, a browser tab and app icon sizes.</p>
+
+  <!-- 1. Doors -->
+  <section class="concept">
+    <header><h2>1. The doors</h2><p>Closed elevator doors with the orange floor light above. Reads at any size.</p></header>
+    <template id="m1"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#0b0b0b"/><rect x="27" y="9" width="10" height="3" fill="#d1500f"/><rect x="15" y="17" width="34" height="38" fill="#fff"/><rect x="31" y="17" width="2" height="38" fill="#0b0b0b"/></svg></template>
+  </section>
+
+  <!-- 2. Shaft -->
+  <section class="concept">
+    <header><h2>2. Going up</h2><p>A lift shaft with the car near the top, the same idea as the "Going up" cue on the site.</p></header>
+    <template id="m2"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#0b0b0b"/><rect x="20.5" y="8.5" width="23" height="47" fill="none" stroke="#fff" stroke-width="3"/><rect x="25" y="13" width="14" height="14" fill="#d1500f"/><rect x="31" y="27" width="2" height="27" fill="#fff"/></svg></template>
+  </section>
+
+  <!-- 3. Monogram -->
+  <section class="concept">
+    <header><h2>3. The L</h2><p>A Gambarino "L" with an up arrow, echoing the old logo's arrow in the new style.</p></header>
+    <template id="m3"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#0b0b0b"/><text x="17" y="52" font-family="Gambarino, Georgia, serif" font-size="46" fill="#fff">L</text><path d="M44 12 L52 22 H36 Z" fill="#d1500f"/></svg></template>
+  </section>
+</main>
+
+<script>
+  // ponytail: one template per mark, cloned into every preview so the concepts can't drift apart
+  document.querySelectorAll(".concept").forEach(sec => {
+    const mark = () => sec.querySelector("template").content.firstElementChild.cloneNode(true).outerHTML;
+    const word = '<div class="word"><b>LEVX</b><span>Ascensores</span></div>';
+    sec.insertAdjacentHTML("beforeend", `
+      <div class="boards">
+        <div class="board"><div class="lockup">${mark()}${word}</div></div>
+        <div class="board dark"><div class="lockup">${mark()}${word}</div></div>
+      </div>
+      <div class="row">
+        <div><div class="tab"><div>${mark()} LEVX Ascensores</div></div><div class="bar"></div></div>
+        <div class="sizes">
+          <figure><span class="phone">${mark()}</span><figcaption>Phone</figcaption></figure>
+          <figure>${mark().replace("<svg", '<svg width="32" height="32"')}<figcaption>32px</figcaption></figure>
+          <figure>${mark().replace("<svg", '<svg width="16" height="16"')}<figcaption>16px</figcaption></figure>
+        </div>
+      </div>`);
+  });
+</script>
+</body>
+</html>
