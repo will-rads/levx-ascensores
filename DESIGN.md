@@ -8,6 +8,7 @@ Plain one-page service site. Design direction: gpt-taste-2. Preserve this look u
 - Buttons and emergency band are black; orange `#d1500f` is for small accents, stars, rules and focus rings. Hero primary button is white.
 - Square corners throughout, including navigation, its sliding highlight and portraits. Thin image outlines. Preserve photos' native colors; service panels change brightness/contrast.
 - Gambarino 400: headings, navigation, buttons, stats and header wordmark. Satoshi: body, form/language labels, small panel labels and footer wordmark. Cairo handles Arabic text; the Latin header name stays Gambarino.
+- Logo: black square "L" + white up arrow + split "X" (Sinexcel-style), no orange. Inline SVG beside the header name; source and concepts in `logo/index.html`. Favicons `img/icon-32.png`, `icon-192.png`, `apple-touch-icon.png` are rendered from it.
 - Full header name on phones, stacked on two lines. Keep language controls and call button beside it; compact spacing below 360px.
 - Desktop navigation follows Cedars: centered dark translucent square menu, 250ms sliding orange highlight on hover/focus and active section tracking. Hidden on phones.
 - No eyebrow headings, numbered boxes or final full stops on headings. Keep copy short.
