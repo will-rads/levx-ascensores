@@ -18,7 +18,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   font-family: "Satoshi", "Cairo", system-ui, -apple-system, sans-serif;
@@ -28,7 +28,7 @@ body {
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 [lang="ar"] body { font-family: "Cairo", "Satoshi", system-ui, sans-serif; }
@@ -359,7 +359,6 @@ html[data-motion="on"] .cue-hint svg { animation: bob 1.9s var(--ease) infinite;
 
 .marquee {
   display: flex;
-  gap: 4rem;
   width: max-content;
   animation: marquee 22s linear infinite;
 }
@@ -368,6 +367,7 @@ html[data-motion="on"] .cue-hint svg { animation: bob 1.9s var(--ease) infinite;
   height: 26px;
   width: auto;
   flex-shrink: 0;
+  margin-inline-end: 4rem; /* margin, not gap: keeps both halves exactly equal so -50% loops seamlessly */
   opacity: 0.55;
 }
 

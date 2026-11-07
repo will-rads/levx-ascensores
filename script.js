@@ -471,7 +471,14 @@ function renderVoices(dict) {
 
 /* Marquee: duplicate for a seamless loop */
 const mq = document.getElementById("marquee");
-mq.innerHTML += mq.innerHTML;
+{
+  // repeat the set until one half covers the widest screen, then double it; -50% lands on an identical frame
+  const set = mq.innerHTML;
+  const n = Math.max(1, Math.ceil(Math.max(innerWidth, 1920) / mq.scrollWidth));
+  mq.innerHTML = set.repeat(n * 2);
+  mq.style.animationDuration = 22 * n + "s"; // same speed however many copies
+  [...mq.children].slice(mq.children.length / (n * 2)).forEach(img => { img.alt = ""; img.setAttribute("aria-hidden", "true"); });
+}
 
 /* Stats count up once, when the row arrives. ponytail: no easing lib, one cubic ease-out. */
 const countIO = new IntersectionObserver((entries, obs) => {
