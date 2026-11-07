@@ -839,6 +839,31 @@ html[data-motion="off"] .voice-row { animation: none; }
 
 [lang="ar"] .stat-label { letter-spacing: 0; }
 
+
+/* ---------- Certificate badge ---------- */
+.cert-badge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 0.9rem;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+}
+.cert-badge:hover { background: var(--surface); }
+.cert-seal { flex: none; }
+.cert-title { font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.72rem; }
+.cert-meta { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.cert-verify { color: var(--ink-2); text-decoration: underline; text-underline-offset: 3px; }
+.cert-badge:hover .cert-verify { color: var(--ink); }
+[lang="ar"] .cert-title { letter-spacing: 0; font-size: 0.85rem; }
+.footer-cert { flex-basis: 100%; color: var(--ink-2); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+.footer-cert:hover { color: var(--ink); }
+
 /* ---------- Buildings ---------- */
 
 .buildings { background: var(--bg); }
